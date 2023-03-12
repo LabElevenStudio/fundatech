@@ -1,0 +1,121 @@
+@use './vars';
+
+
+.headerBtns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    a:last-child{
+        margin-left:20px;
+    }
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.specialization{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    article{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+            color: vars.$textcolor;
+            font-family: vars.$fontslab;
+            font-size: 2.3rem;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            max-inline-size: 600px;
+            word-wrap: break-word;
+            color: vars.$textcolor;
+            font-family: vars.$fontslab;
+        }
+    }
+}
+
+.specialization .grid{
+    max-width:80%;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    figure img{
+        width: 250px;
+        border-radius: 10px;
+    }
+    figure figcaption{
+        font-size: 1.5rem;
+        color: vars.$textcolor;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-family: vars.$fontslab;
+    }
+}
+
+.products{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    article{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        p{
+            max-inline-size: 450px;
+            color: vars.$textcolor;
+            line-height: vars.$lh-small;
+            font-family: vars.$fontslab;
+        }
+    }
+}
+
+
+
+.paints{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    img{
+        width: 150px;
+        position: relative;
+        z-index: 1;
+        &:nth-child(2){
+            width: 250px;
+            z-index: 2;
+        }
+    }
+}
+
+.bluepaint, .greenpaint{
+    top: 40px;
+}
+
+.bluepaint{
+    left: 80px;
+}
+
+.greenpaint{
+    left: -100px;
+}

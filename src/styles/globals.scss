@@ -1,0 +1,65 @@
+@use './vars';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+Pro:wght@600;700&display=swap');
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+h1{
+    font-family: vars.$fontsans;
+    font-size: vars.$title;
+    inline-size: 600px;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    line-height: 3.3rem;
+    @media #{vars.$media-mobile-l}{
+        inline-size: 400px;
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+    }
+    @media #{vars.$media-mobile-m}{
+      inline-size: 300px;
+      font-size: 2.3rem;
+      line-height: 2.5rem;
+    }
+    @media #{vars.$media-mobile-s}{
+      inline-size: 300px;
+      font-size: 2rem;
+      line-height: 2.3rem;
+    }
+}
+
+h2{
+  font-size: vars.$heading;
+  font-family: vars.$fontslab;
+  text-transform: capitalize;
+  color: vars.$textcolor;
+}
+
+button{
+  border: none;
+  background: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+}

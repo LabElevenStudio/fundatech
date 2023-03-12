@@ -1,0 +1,9 @@
+@use './vars';
+
+
+.link{
+    font-family: vars.$fontsans;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 1.3rem;
+}

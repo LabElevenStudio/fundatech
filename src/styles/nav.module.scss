@@ -1,0 +1,70 @@
+@use './vars';
+
+
+
+.navWrapper{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    ul{
+        display: flex;
+        width: 75%;
+        height: 60px;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        .navItems{
+            width: 60%;
+        }
+    }
+}
+
+
+.navItems > ul{
+    width: 70%;
+    display: flex;
+    a{
+        color: #000;
+        text-decoration: none;
+        font-family: vars.$fontsans;
+        font-size: .86rem;
+    }
+}
+
+.logo a img{
+    max-width: 100px;
+}
+
+
+.navWrapper ul .cta{
+    display: flex;
+    width:300px;
+    justify-content: space-between;
+    align-items: center;
+    span.signUpBtns{
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            font-family: vars.$fontsans;
+            font-size: .8rem;
+        }
+    }
+    a:first-child{
+        margin-right: 20px;
+    }
+}
+
+.cartIcon{
+    color: vars.$orange;
+}
+
+.userProfile{
+    color: vars.$orange;
+}
+
+.chevron{
+    color: vars.$orange;
+}

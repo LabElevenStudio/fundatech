@@ -1,0 +1,33 @@
+@use './vars';
+
+.bannerContainer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: vars.$deepblue;
+}
+
+.contacts{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    p{
+        color: #fff;
+        font-size: .8rem;
+    }
+    p span{
+        margin-right: 10px;
+    }
+}
+
+.social{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    li a{
+        color: #fff;
+    }
+}

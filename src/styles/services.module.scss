@@ -1,0 +1,197 @@
+@use './vars';
+
+
+.servicesHero{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+    & > article{
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        h2{
+            position: relative;
+            color: #fff;
+            z-index: 2;
+            text-align: center;
+        }
+        p{
+            position: relative;
+            color: #fff;
+            z-index: 2;
+            font-family: vars.$fontslab;
+            top: -20px;
+            text-align: center;
+            font-family: vars.$fontslab;
+        }
+    }
+}
+
+.hashAccent{
+    width: 100%;
+    height: 200px;
+    background-color: vars.$deepblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    img{
+        width: 200px;
+    }
+    img:nth-child(2){
+        opacity: .3;
+    }
+}
+
+.paintExamples{
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    div{
+        width: 180px;
+        height: 200px;
+        background-color: grey;
+        box-shadow: 0px 4.07209px 25.4506px rgba(0, 0, 0, 0.25);
+        &:first-child{
+            border-radius: 50px 50px 50px 0px;
+        }
+        &:nth-child(2){
+            border-radius: 50px 50px 50px 0px;
+        }
+        &:nth-child(3){
+            border-radius: 50px 50px 0px 50px;
+        }
+        &:last-child{
+            border-radius: 50px 50px 0px 50px;
+        }
+    }
+    
+}
+
+
+
+.specialization{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        color: vars.$textcolor;
+        font-family: vars.$fontslab;
+        text-align: center;
+        max-inline-size: 850px;
+        word-wrap: break-word;
+    }
+}
+
+.specializationGrid{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    figure{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 30px;
+    }
+    .flowRight{
+        flex-direction: row-reverse;
+    }
+}
+
+.specializationGrid figure:first-child div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/specialties.png');
+    background-position: center;
+    align-items: cover;
+}
+.specializationGrid figure:last-child div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/textured.png');
+    background-position: center;
+    align-items: cover;
+}
+.specializationGrid figure:nth-child(2) div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/emulsion.png');
+    background-position: center;
+    align-items: cover;
+}
+.specializationGrid figure:nth-child(3) div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/enamel.png');
+    background-position: center;
+    align-items: cover;
+}
+.specializationGrid figure:nth-child(4) div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/industrial.png');
+    background-position: center;
+    align-items: cover;
+}
+.specializationGrid figure:nth-child(5) div{
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    background: url('/images/roadmarking.png');
+    background-position: center;
+    align-items: cover;
+}
+
+.specializationGrid .flowLeft div{
+    border-radius: 50px 50px 50px 0px;
+}
+.specializationGrid .flowRight div{
+    border-radius: 50px 50px 0px 50px;
+}
+
+
+.specializationGrid figure figcaption{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+        font-family: vars.$fontslab;
+        font-size: 1.3rem;
+        color: vars.$textcolor;
+    }
+    a{
+        color: vars.$textcolor;
+        transition: color .3s ease-out;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+

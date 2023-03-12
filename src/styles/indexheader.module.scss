@@ -1,0 +1,16 @@
+@use './vars';
+
+
+.header{
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    .subtitle{
+        color: #fff;
+        font-family: vars.$fontslab;
+        font-size: 1rem;
+        text-transform: capitalize;
+        margin-top: -40px;
+    }
+}

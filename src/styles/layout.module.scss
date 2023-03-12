@@ -1,0 +1,13 @@
+@use './vars';
+
+
+.layoutWrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.innerWrapper{
+    flex: 1;
+    // margin-bottom: 60vh;
+}

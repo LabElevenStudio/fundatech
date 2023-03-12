@@ -1,0 +1,90 @@
+@use './vars';
+
+.story{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px; 
+    & > p{
+        color: #000;
+        font-family: vars.$fontslab;
+        font-weight: 600;
+        text-transform: capitalize;
+        position: relative;
+        left: -27.8%;
+    }
+    h2{
+        position: relative;
+        left: -36%;
+    }
+}
+
+.storyInner{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img{
+        width: 350px;
+    }
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            max-inline-size: 450px;
+            color: vars.$textcolor;
+            font-family: vars.$fontslab;
+        }
+    }
+}
+
+.offerings{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .offeringsgrid{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: vars.$textcolor;
+            margin-left: 20px;
+        }
+    }
+
+}
+
+.founder{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 10px;
+    margin-top: 30px;
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        p{
+            max-inline-size: 350px;
+            color: vars.$textcolor;
+            font-family: vars.$fontslab;
+            line-height: vars.$lh-small;
+        }
+    }
+    img{
+        width: 300px;
+    }
+}
