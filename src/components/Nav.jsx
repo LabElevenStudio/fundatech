@@ -3,7 +3,7 @@ import {FaCartPlus, FaChevronCircleDown, FaUserCircle} from 'react-icons/fa'
 import { IconContext } from "react-icons";
 import Styles from '../styles/nav.module.scss'
 import { useContext } from 'react';
-import AuthContext from '../stores/authContext'
+import AuthContext from '../stores/AuthContext'
 
 const Nav = () => {
 

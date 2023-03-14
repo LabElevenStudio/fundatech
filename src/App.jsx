@@ -9,7 +9,7 @@ import NotFound from './404'
 import {Route, Routes} from 'react-router-dom'
 import Home from './Home'
 import Layout from './components/Layout'
-import {AuthContextProvider} from './stores/authContext'
+import {AuthContextProvider} from './stores/AuthContext'
 
 function App(){
   return(
