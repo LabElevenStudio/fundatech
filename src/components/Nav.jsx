@@ -2,10 +2,13 @@ import {NavLink} from 'react-router-dom'
 import {FaCartPlus, FaChevronCircleDown, FaUserCircle} from 'react-icons/fa'
 import { IconContext } from "react-icons";
 import Styles from '../styles/nav.module.scss'
-
-
+import { useContext } from 'react';
+import AuthContext from '../stores/authContext'
 
 const Nav = () => {
+
+    const {user, login, logout} = useContext(AuthContext)
+    console.log(user)
     return(
         <nav className={Styles.navWrapper} >
             <ul>
@@ -34,7 +37,8 @@ const Nav = () => {
                     </ul>
                 </li>
                 <li className={Styles.cta}>
-                    <button type="button" id={Styles.signupbtn}>Signup/Login</button>
+                    <button type="button" onClick={login} id={Styles.signupbtn}>Register</button>
+                    <button type="button" onClick={logout} id={Styles.signupbtn}>logout</button>
                 </li>
             </ul>
         </nav>

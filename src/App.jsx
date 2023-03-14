@@ -9,11 +9,12 @@ import NotFound from './404'
 import {Route, Routes} from 'react-router-dom'
 import Home from './Home'
 import Layout from './components/Layout'
-
+import {AuthContextProvider} from './stores/authContext'
 
 function App(){
   return(
     <main>
+      <AuthContextProvider>
       <Layout>
       <Routes>
       <Route index element={<Home />} />
@@ -25,6 +26,7 @@ function App(){
       <Route path="*" element={<NotFound />} />
     </Routes>
     </Layout>
+    </AuthContextProvider>
     </main>
   )
 }
