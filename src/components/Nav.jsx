@@ -7,8 +7,10 @@ import AuthContext from '../stores/AuthContext'
 
 const Nav = () => {
 
-    const {user, login, logout} = useContext(AuthContext)
-    console.log(user)
+    const {user, login, logout, authReady} = useContext(AuthContext)
+
+
+
     return(
         <nav className={Styles.navWrapper} >
             <ul>
@@ -36,10 +38,19 @@ const Nav = () => {
                         </li>
                     </ul>
                 </li>
+                { authReady && (
                 <li className={Styles.cta}>
-                    <button type="button" onClick={login} id={Styles.signupbtn}>Register</button>
-                    <button type="button" onClick={logout} id={Styles.signupbtn}>logout</button>
+                    {!user && <button type="button" onClick={login} id={Styles.signupbtn}>Register</button>}
+                    {user && ( <><FaUserCircle/> <p>{user.email.slice(0, user.email.indexOf('@'))}</p> </>)}
+                    {user && (
+                        <>
+                            <FaCartPlus />
+                            <button type="button" onClick={logout} id={Styles.signupbtn}>logout</button>
+                        </>
+                    )
+                    }
                 </li>
+                )}
             </ul>
         </nav>
     )
