@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev:ntl": "netlify dev",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@apollo/client": "^3.7.10",
+    "axios": "^1.3.4",
     "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "gsap": "^3.11.4",
