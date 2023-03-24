@@ -2,8 +2,6 @@ import { Helmet } from "react-helmet";
 import TextButton from "./components/TextButton";
 import Header from "./components/Header";
 import ReturnNav from "./components/ReturnNav";
-import { useQuery, gql } from "@apollo/client";
-import {useEffect, useState} from 'react'
 
 
 export const PRODUCTS_QUERY = gql`
@@ -28,7 +26,8 @@ const Products = () => {
     const {loading, error, data} =  useQuery(PRODUCTS_QUERY)
        
     
-
+    if(loading) return <p>...loading</p>
+    if(error) return <p>an error occured {error}</p>
 
     return(
         <>
@@ -38,17 +37,14 @@ const Products = () => {
                 const categoryName = categories.map(({name}) => name)
                 return(
                     <div key={id}>
-                        {categoryName === 'T-shirts' ? (
-                            <>
                                 <p>{name}</p>
                                 <img src={imageUrl} alt={name} />
                                 <p>{categoryName}</p>
-                            </>
-                        ): null}
                     </div>
                 )
             })
         }
+        <ReturnNav />
         </>
     )
 }
