@@ -49,6 +49,7 @@
 
 }
 
+
 .footerNav{
     label{
         color: #fff;
@@ -122,6 +123,9 @@
             text-align: left;
             font-weight: 400;
             font-family: vars.$fontslab;
+        }
+        a{
+            color: #fff;
         }
     }
 }

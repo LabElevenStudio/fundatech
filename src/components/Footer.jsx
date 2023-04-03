@@ -1,7 +1,7 @@
 import Styles from '../styles/footer.module.scss'
 import {FaFacebookF, FaTwitter, FaInstagram, FaEnvelope} from 'react-icons/fa'
 import TextButton from './TextButton'
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -36,7 +36,7 @@ export default function Footer() {
               <dl>
                 <dt>Support</dt>
                 <dd>
-                  <TextButton path="/contacat">Contact Us</TextButton>
+                  <Link to="/contacat">Contact Us</Link>
                   </dd>
                 <dd>FAQ</dd>
                 <dd>Consultation</dd>
@@ -44,10 +44,10 @@ export default function Footer() {
               <dl>
                 <dt>Fundamental Technology</dt>
                 <dd>
-                  <TextButton path="/about">About Us</TextButton >
+                  <Link to="/about">About Us</Link >
                 </dd>
                 <dd>
-                  <TextButton path="/products">Our Products</TextButton>
+                  <Link to="/products">Our Products</Link>
                   </dd>
                 <dd>
                   Newsroom

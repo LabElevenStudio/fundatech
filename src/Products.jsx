@@ -1,52 +1,130 @@
 import { Helmet } from "react-helmet";
-import TextButton from "./components/TextButton";
-import Header from "./components/Header";
 import ReturnNav from "./components/ReturnNav";
+import Product from "./components/Product"
+import "./styles/products.module.scss";
+import { Route, Routes, Link } from "react-router-dom";
+import { useQuery, gql } from "@apollo/client";
 
-
-export const PRODUCTS_QUERY = gql`
-{
-    products{
+const CATEGORY_QUERY = gql`
+  query Category {
+    categories {
+      id
+      slug
+      name
+      description
+      products {
         id
         name
+        slug
+        description
         price
-        images{
-            url(transformation: {image: {resize: {fit: scale, height: 50, width: 50}}})
-        }
-        categories{
-            name
-        }
+      }
     }
-}`
-
+  }
+`;
 
 const Products = () => {
 
-    
-    const {loading, error, data} =  useQuery(PRODUCTS_QUERY)
-       
-    
-    if(loading) return <p>...loading</p>
-    if(error) return <p>an error occured {error}</p>
+  const productSlugs = [
+    "specialties",
+    "emulsion",
+    "industrial-and-marine",
+    "enamel",
+    "road-marking",
+    "textured-paints",
+  ];
 
-    return(
-        <>
-        {
-            data && data.products.map(({id, name , price, images, categories}) => {
-                const imageUrl = images.map(({url}) => url)
-                const categoryName = categories.map(({name}) => name)
-                return(
-                    <div key={id}>
-                                <p>{name}</p>
-                                <img src={imageUrl} alt={name} />
-                                <p>{categoryName}</p>
-                    </div>
-                )
-            })
-        }
+  const { data, loading, error } = useQuery(CATEGORY_QUERY);
+
+
+    if (loading) return <h2>Loading ...</h2>
+    if (error) return <p>There was an error {error}</p>
+
+    // console.log(data.categoriees)
+
+  return (
+    <>
+          <main>
+              <ul>
+                  {data && data.categories.map(({ id, slug, name, description, products }) => {
+                      return (
+                          <li key={`categories-${id}`}>
+                            <nav>
+                                <h3>{name}</h3>
+                                <Link to={`/products/category/${slug}`}>View More</Link>
+                              </nav>
+                              {
+                                  products.map((prod) => (
+                                      <Product prod={prod} />
+                                  ))
+                              }
+                         </li>
+                      )
+                  })}
+              </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <ul>
+          {data && data.categories.map(({ name, id }) => {
+            return (
+              <li key={`category-${id}`}>
+                <nav>
+                  <h2>{name}</h2>
+                  <Link to={`products/category/${id}`}>View more</Link>
+                </nav>
+                <section> */}
+              {/* <div>
+                  {data && data.categories.map(({ name, id }) => {
+                      return (
+                        <>
+                          <nav key={`category-${id}`}>
+                            <h3>{name}</h3>
+                            <Link to={`products/category/${id}`}>
+                              view more
+                            </Link>
+                          </nav>
+                          {productSlugs.map((slug) => (
+                            <section key={slug}>
+                              <Product slug={slug} />
+                            </section>
+                          ))}
+                        </>
+                      );
+                  })}
+                 
+                  </div> */}
+                {/* </section>
+              </li>
+            );
+          })}
+        </ul> */}
+
         <ReturnNav />
-        </>
-    )
-}
+      </main>
+    </>
+  );
+};
 
-export default Products
+export default Products;

@@ -1,32 +1,27 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql } from '@apollo/client'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import Styles from '../styles/productcat.module.scss'
 
 
 
 
+const ProductCategory = ({prod}) => {
 
 
-export const PRODUCTS_QUERY = gql`
-{
-    products{
-        id
-        name
-        price
-        images{
-            url(transformation: {image: {resize: {fit: scale, height: 50, width: 50}}})
-        }
-        categories{
-            name
-        }
-    }
-}`
+    const { id, name, slug, description, price } = prod
+            
 
-
-
-
-const Product = () => {
-    return(
-        <section></section>
+    return (
+        <>
+            <Link to={`/product/${slug}`}>
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <small>{price}</small>
+           </Link>
+        </>
     )
 }
 
-export default Product
+
+export default ProductCategory

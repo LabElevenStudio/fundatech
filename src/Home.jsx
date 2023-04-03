@@ -2,6 +2,7 @@ import {Helmet} from 'react-helmet'
 import Header from './components/IndexHeader'
 import LinkButton from './components/LinkButton';
 import Styles from './styles/home.module.scss'
+import {Link} from 'react-router-dom'
 
 const Home = () => {
     return(
@@ -35,6 +36,7 @@ const Home = () => {
              </p>
            </article>
            <section className={Styles.grid}>
+            <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/specialties.png"
@@ -42,6 +44,8 @@ const Home = () => {
                />
                <figcaption>specialities paints</figcaption>
              </figure>
+             </Link>
+             <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/emulsion.png"
@@ -49,6 +53,8 @@ const Home = () => {
                />
                <figcaption>Emulsion paints</figcaption>
              </figure>
+             </Link>
+             <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/enamel.png"
@@ -56,6 +62,8 @@ const Home = () => {
                />
                <figcaption>Enamel paints</figcaption>
              </figure>
+             </Link>
+             <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/industrial.png"
@@ -63,6 +71,8 @@ const Home = () => {
                />
                <figcaption>industrial marine paints</figcaption>
              </figure>
+             </Link>
+             <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/roadmarking.png"
@@ -70,6 +80,8 @@ const Home = () => {
                />
                <figcaption>road marking paints</figcaption>
              </figure>
+             </Link>
+             <Link to="/products/category/:id" >
              <figure>
                <img
                  src="/images/textured.png"
@@ -77,6 +89,7 @@ const Home = () => {
                />
                <figcaption>textured paints</figcaption>
              </figure>
+             </Link>
            </section>
          </article>
          <section className={Styles.products}>

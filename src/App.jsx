@@ -10,8 +10,27 @@ import {Route, Routes} from 'react-router-dom'
 import Home from './Home'
 import Layout from './components/Layout'
 import {AuthContextProvider} from './stores/AuthContext'
+import Category from './Category'
+
+
+
 
 function App(){
+
+   const categoryIds = [
+  import.meta.env.VITE_SPECIALTIES,
+  import.meta.env.VITE_EMULSION,
+  import.meta.env.IANDM,
+  import.meta.env.VITE_ENAMEL,
+  import.meta.env.VITE_ROAD_MARKING,
+  import.meta.env.VITE_TEXTURED,
+  ];
+
+
+
+
+
+
   return(
     <main>
       <AuthContextProvider>
@@ -23,6 +42,7 @@ function App(){
       <Route path='/projects' element={<Projects />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/products' element={<Products />} />
+      <Route path="/products/category/:slug" element={<Category />} />"
       <Route path="*" element={<NotFound />} />
     </Routes>
     </Layout>
@@ -32,3 +52,4 @@ function App(){
 }
 
 export default App
+
