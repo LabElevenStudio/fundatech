@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
 import ReturnNav from "./components/ReturnNav";
-import Product from "./components/Product"
-import "./styles/products.module.scss";
-import { Route, Routes, Link } from "react-router-dom";
+import ProductCard from "./components/ProductCard";
 import { useQuery, gql } from "@apollo/client";
+import { Link } from "react-router-dom";
+import Styles from "./styles/products.module.scss";
+import Header from './components/Header'
 
 const CATEGORY_QUERY = gql`
   query Category {
@@ -24,106 +25,47 @@ const CATEGORY_QUERY = gql`
 `;
 
 const Products = () => {
-
-  const productSlugs = [
-    "specialties",
-    "emulsion",
-    "industrial-and-marine",
-    "enamel",
-    "road-marking",
-    "textured-paints",
-  ];
-
   const { data, loading, error } = useQuery(CATEGORY_QUERY);
 
-
-    if (loading) return <h2>Loading ...</h2>
-    if (error) return <p>There was an error {error}</p>
-
-    // console.log(data.categoriees)
+  if (loading) return <h2>Loading ...</h2>;
+  if (error) return <p>There was an error {error}</p>;
 
   return (
-    <>
-          <main>
-              <ul>
-                  {data && data.categories.map(({ id, slug, name, description, products }) => {
-                      return (
-                          <li key={`categories-${id}`}>
-                            <nav>
-                                <h3>{name}</h3>
-                                <Link to={`/products/category/${slug}`}>View More</Link>
-                              </nav>
-                              {
-                                  products.map((prod) => (
-                                      <Product prod={prod} />
-                                  ))
-                              }
-                         </li>
-                      )
-                  })}
-              </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* <ul>
-          {data && data.categories.map(({ name, id }) => {
+    <main>
+      <Helmet>
+        <title>Fudamental Technology | Products</title>
+      </Helmet>
+      <Header title="Products" img="./images/headers/product-hero.png" />"
+      <ul className={Styles.catWrapper}>
+        {data &&
+          data.categories.map(({ id, slug, name, products }) => {
             return (
-              <li key={`category-${id}`}>
-                <nav>
-                  <h2>{name}</h2>
-                  <Link to={`products/category/${id}`}>View more</Link>
+              <li key={`categories-${id}`} className={Styles.category}>
+                <nav className={Styles.catNav}>
+                  <h3>{name}</h3>
+                  <Link to={`/category/${slug}`}>View More</Link>
                 </nav>
-                <section> */}
-              {/* <div>
-                  {data && data.categories.map(({ name, id }) => {
-                      return (
-                        <>
-                          <nav key={`category-${id}`}>
-                            <h3>{name}</h3>
-                            <Link to={`products/category/${id}`}>
-                              view more
-                            </Link>
-                          </nav>
-                          {productSlugs.map((slug) => (
-                            <section key={slug}>
-                              <Product slug={slug} />
-                            </section>
-                          ))}
-                        </>
-                      );
+                <section className={Styles.productList}>
+                  {products.map((prod) => {
+                    // console.log('prod', prod.slug)
+                    const { id, slug } = prod
+                    return (
+                      <Link
+                        key={`product-${id}`}
+                        to={`/product/${slug}`}
+                      >
+                        <ProductCard prod={prod} />
+                      </Link>
+                    )
                   })}
-                 
-                  </div> */}
-                {/* </section>
+                </section>
               </li>
             );
           })}
-        </ul> */}
+      </ul>
 
-        <ReturnNav />
-      </main>
-    </>
+      <ReturnNav />
+    </main>
   );
 };
 

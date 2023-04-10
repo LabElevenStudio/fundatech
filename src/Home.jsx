@@ -3,8 +3,28 @@ import Header from './components/IndexHeader'
 import LinkButton from './components/LinkButton';
 import Styles from './styles/home.module.scss'
 import {Link} from 'react-router-dom'
+import {useQuery, gql} from '@apollo/client'
+
+
+
+const CATEGORY_QUERY = gql`
+  query Category {
+    categories {
+      id
+      name
+      slug
+      thumbnail
+    }
+  }
+`;
+
 
 const Home = () => {
+
+  const { data, loading, error } = useQuery(CATEGORY_QUERY)
+
+  if(loading) return <p>...Loading</p>
+  if(error) return <p>There was an error:{error}</p>
     return(
         <main>
         <Helmet>
@@ -35,61 +55,22 @@ const Home = () => {
                optimum value and satisfaction for their patronage.
              </p>
            </article>
-           <section className={Styles.grid}>
-            <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/specialties.png"
-                 alt="specialties paint"
-               />
-               <figcaption>specialities paints</figcaption>
-             </figure>
-             </Link>
-             <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/emulsion.png"
-                 alt="emulsion paint"
-               />
-               <figcaption>Emulsion paints</figcaption>
-             </figure>
-             </Link>
-             <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/enamel.png"
-                 alt="enamel paint"
-               />
-               <figcaption>Enamel paints</figcaption>
-             </figure>
-             </Link>
-             <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/industrial.png"
-                 alt="industrial paint"
-               />
-               <figcaption>industrial marine paints</figcaption>
-             </figure>
-             </Link>
-             <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/roadmarking.png"
-                 alt="road marking"
-               />
-               <figcaption>road marking paints</figcaption>
-             </figure>
-             </Link>
-             <Link to="/products/category/:id" >
-             <figure>
-               <img
-                 src="/images/textured.png"
-                 alt="textured"
-               />
-               <figcaption>textured paints</figcaption>
-             </figure>
-             </Link>
+            <section className={Styles.grid}>
+              {
+                data.categories.map(({ id, name, slug, thumbnail }) => {
+                  return (
+                    <Link to={`/category/${slug}`} key={id} >
+                      <figure>
+                        <img
+                          src={thumbnail.url}
+                          alt={name}
+                        />
+                        <figcaption>{name}</figcaption>
+                      </figure>
+                    </Link>
+                  );
+                })
+              }
            </section>
          </article>
          <section className={Styles.products}>
@@ -109,7 +90,7 @@ const Home = () => {
              <img
                className={Styles.bluepaint}
                src="/images/paint-blue.png"
-               alt="a bucket of blue paint "
+               alt="a bucket of blue paint"
              />
              <img
                src="/images/paint-orange.png"

@@ -25,13 +25,15 @@ export default function Footer() {
             </ul>
           </div>
           <div className={Styles.footerNav}>
+            <form method="POST" data-netlify="true">
             <label htmlFor="footer-contact">
               <p><span><FaEnvelope /></span>Stay up to date on the latest from Fundamental Technology</p>
               <span className={Styles.formInput}>
                 <input type="email" id="footer-contact" placeholder="Enter Your Email Address" />
                 <button type="submit"> Submit </button>
               </span>
-            </label>
+              </label>
+              </form>
             <nav className={Styles.footerNavInner}>
               <dl>
                 <dt>Support</dt>

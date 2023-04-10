@@ -1,7 +1,5 @@
-import { useQuery, gql } from '@apollo/client'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Styles from '../styles/productcat.module.scss'
+import Styles from '../styles/productcard.module.scss'
 
 
 
@@ -13,13 +11,11 @@ const ProductCategory = ({prod}) => {
             
 
     return (
-        <>
-            <Link to={`/product/${slug}`}>
+        <section className={Styles.prodCard}>
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <small>{price}</small>
-           </Link>
-        </>
+                <small><span>NGN</span> {price}</small>
+        </section>
     )
 }
 

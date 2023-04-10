@@ -51,7 +51,7 @@ const Contact = () => {
                 <FaChevronCircleDown />.
                 <h2>Let's make something together</h2>
                 <p>drop us a line.</p>
-                <form>
+                <form method="POST" data-netlify="true">
                     <div className={Styles.formControl}>
                         <label htmlFor="name">
                             Your Name:

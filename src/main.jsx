@@ -4,11 +4,13 @@ import App from './App'
 import './styles/globals.scss'
 
 //imports
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 //apollo imports
 import {ApolloClient, ApolloProvider, InMemoryCache, gql} from '@apollo/client'
 //usesnipcart import
 //authcontext import optional?
+
+import {SnipcartProvider} from 'use-snipcart'
 
 
 const client = new ApolloClient({
@@ -21,26 +23,15 @@ const client = new ApolloClient({
 })
 
 
-// client
-//   .query({
-//     query: gql`
-//     query TestQuery{
-//       products{
-//         id
-//         name
-//         price
-//       }
-//     }`
-//   })
-//   .then(result => console.log(result))
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
+    <SnipcartProvider>
     <ApolloProvider client={client} >
     <App />
     </ApolloProvider>
-    </BrowserRouter>
+    </SnipcartProvider>
+    </Router>
   </React.StrictMode>
 )

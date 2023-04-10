@@ -1,0 +1,42 @@
+@use './vars';
+
+
+.catWrapper{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.category{
+    width: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    nav{
+        width: inherit;
+        padding: 5px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: vars.$fontsans;
+    }
+}
+
+.category nav h3{
+    font-size: 1.8rem;
+}
+
+.productList{
+    width: inherit;
+    font-family: vars.$fontslab;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
+    padding: 10px 80px;
+    margin-bottom: 50px;
+}

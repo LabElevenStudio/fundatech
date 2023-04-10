@@ -1,0 +1,14 @@
+@use './vars';
+
+
+
+.prodCard p{
+    font-size: .9rem;
+    inline-size: 300px;
+    word-wrap: break-word;
+}
+
+.prodCard small span{
+    font-weight: 600;
+    font-family: vars.$fontsans;
+}
