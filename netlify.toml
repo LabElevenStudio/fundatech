@@ -1,5 +1,5 @@
 [functions]
-    directory = 'netlify/functions/userAuth'
+    directory = 'netlify/functions'
 
 
 [[redirects]]

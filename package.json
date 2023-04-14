@@ -30,6 +30,7 @@
     "react-paystack": "^4.0.3",
     "react-router-dom": "^6.9.0",
     "sass": "^1.59.2",
+    "stripe": "^10.17.0",
     "use-shopping-cart": "^3.1.4",
     "use-snipcart": "^1.2.0"
   },
