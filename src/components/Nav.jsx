@@ -61,7 +61,7 @@ const Nav = () => {
                       onClick={logout}
                       id={Styles.signupbtn}
                     >
-                      logout
+                      Logout
                     </button>
                   </IconContext.Provider>
                 </>

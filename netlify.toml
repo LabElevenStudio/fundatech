@@ -3,5 +3,5 @@
 
 
 [[redirects]]
-    from = "/.neltify/functions/userAuth/*"
-    to="/api/:splat"
+    from="/api/*"
+    to = "/.netlify/functions/:splat"

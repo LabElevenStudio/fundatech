@@ -73,12 +73,13 @@
 
 #signupbtn{
     background-color: vars.$base;
-    padding: 10px 15px;
+    padding: 10px 20px;
     color: #fff;
     margin-left: 20px;
     transition: background-color .3s ease-out, color .3s ease-out;
     &:hover{
         background-color: #fff;
-        color: vars.$base;;
+        color: vars.$base;
+        border: 2px solid vars.$base;
     }
 }

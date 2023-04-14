@@ -1,35 +1,48 @@
 @use './vars';
 
 .primary{
-    background-color: #fff;
     text-decoration: none;
     border-radius: 5px;
     width: 180px;
     height: 40px;
-    padding: 5px;
     font-weight: 600;
     display: grid;
     place-items: center;
-    span{
+    button{
+        width: 100%; height: 100%;
+        padding: 5px;
+        background-color: #fff;
         color: vars.$base;
         font-family: vars.$fontsans;
         text-transform: capitalize;
+        transition: color .5s ease-out, background-color .2s ease-out;
+        &:hover {
+            background-color: vars.$base;
+            color: #fff;
+        }
     }
 }
 
 .secondary{
-    background-color: vars.$base;
     text-decoration: none;
     border-radius: 5px;
     width: 180px;
     height: 40px;
-    padding: 5px;
     display: grid;
     place-items: center;
-    span{
+    button{
+        width: 100%; height: 100%;
+        padding: 5px;
+        background-color: vars.$base;
         color: #fff;
         font-family: vars.$fontsans;
         text-transform: capitalize;
+        transition: color .5s ease-out, background-color .2s ease-out;
+        &:hover {
+            background-color: #fff;
+            color: vars.$base;
+            border: 2px solid vars.$base;
+        }
     }
 }
 
@@ -40,12 +53,20 @@
     border-radius: 5px;
     width: 180px;
     height: 40px;
-    padding: 5px;
+    
     display: grid;
     place-items: center;
-    span{
+    button{
+        width: 100%;
+        height: 100%;
+        padding: 5px;
         color: #000;
         font-family: vars.$fontsans;
         text-transform: capitalize;
+        transition: color .5s ease-out, background-color .2s ease-out;
+        &:hover {
+                background-color: vars.$base;
+                color: #fff;
+            }
     }
 }

@@ -31,7 +31,6 @@ export const AuthContextProvider = ({children}) => {
         netlifyIdentity.on('init', (user) => {
             setUser(user)
             setAuthReady(true)
-            console.log('init event')
         })
 
         //initialize netlify identity instance

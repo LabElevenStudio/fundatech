@@ -2,8 +2,6 @@ import { Link, useParams } from 'react-router-dom'
 import {Helmet} from 'react-helmet'
 import { useQuery, gql } from "@apollo/client";
 import ReturnNav from './components/ReturnNav'
-import {fill} from "@cloudinary/url-gen/actions/resize";
-import {CloudinaryImage} from '@cloudinary/url-gen';
 import Header from './components/Header'
 import Styles from './styles/category.module.scss'
 
@@ -37,21 +35,19 @@ const Category = () => {
       variables: { slug },
     });
 
-  console.log(data)
+
 
     if (loading) return <p>...Loading</p>;
     if (error) return <p>There was an error: {error}</p>;
   
-  console.log(data)
+
     
     return (
       <main>
         {
           data && data.categories.map(({ id, name, banner,  products }) => {
-            console.log(banner.public_id)
-            // const bannerImg = new CloudinaryImage(banner.url, {
-            //   cloudName: "vulcanica11",
-            // }).resize(fill().width(800).height(350));
+
+            
 
             return (
               <section key={`cat-${id}`}>

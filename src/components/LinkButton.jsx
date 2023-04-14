@@ -6,9 +6,7 @@ const LinkButton = ({children, path, btnType}) => {
             return(
             <Link to={path} className={Styles.primary}>
                 <button>
-                    <span>
                     {children}
-                    </span>
                 </button>
              </Link>
             )
@@ -16,9 +14,7 @@ const LinkButton = ({children, path, btnType}) => {
             return(
                 <Link to={path} className={Styles.secondary}>
                     <button>
-                        <span>
                         {children}
-                        </span>
                     </button>
                  </Link>
                 )

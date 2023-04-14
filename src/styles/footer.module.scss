@@ -84,6 +84,11 @@
         text-transform: uppercase;
         color: #fff;
         border: none;
+        transition: color .2s ease-out, background .2s ease-out;
+        &:hover{
+            color: vars.$orange;
+            background: #fff;
+        }
         @media #{vars.$media-mobile-l}{
             left: 0px;
             top: 10px;

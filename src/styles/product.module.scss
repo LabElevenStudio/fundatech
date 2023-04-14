@@ -52,16 +52,12 @@
 }
 
 
-.addToCart {
-     background-color: vars.$base;
-     text-decoration: none;
-     border-radius: 5px;
-     width: 180px;
-     height: 40px;
-     padding: 5px;
-     display: grid;
-     place-items: center;
-     color: #fff;
-     font-family: vars.$fontsans;
-     text-transform: capitalize;
+#info{
+     font-size: .8rem;
+     color: vars.$base;
 }
+
+.infowrap{
+     display: flex;
+}
+

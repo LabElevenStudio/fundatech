@@ -23,8 +23,10 @@ const Home = () => {
 
   const { data, loading, error } = useQuery(CATEGORY_QUERY)
 
+
   if(loading) return <p>...Loading</p>
-  if(error) return <p>There was an error:{error}</p>
+  if (error) return <p>There was an error:{error}</p>
+  
     return(
         <main>
         <Helmet>

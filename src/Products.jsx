@@ -46,7 +46,7 @@ const Products = () => {
                   <Link to={`/category/${slug}`}>View More</Link>
                 </nav>
                 <section className={Styles.productList}>
-                  {products.map((prod) => {
+                  {products.slice(0, 3).map((prod) => {
                     // console.log('prod', prod.slug)
                     const { id, slug } = prod
                     return (

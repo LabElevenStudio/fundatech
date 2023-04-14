@@ -6,4 +6,8 @@
     text-transform: capitalize;
     color: #000;
     font-size: 1.3rem;
+    transition: color .5s ease-out;
+        &:hover {
+            color: vars.$base;
+        }
 }
