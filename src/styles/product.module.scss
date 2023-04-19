@@ -57,7 +57,42 @@
      color: vars.$base;
 }
 
-.infowrap{
+
+
+.quantityCounter{
      display: flex;
+     width: 100%;
+     justify-content: space-around;
+     align-items: center;
+}
+
+#increaseBtn, #decraseBtn{
+     border: none;
+     background: none;
+}
+
+
+#quantity{
+     padding: 10px 20px;
+     p{
+          font-family: vars.$fontsans;
+     }
+}
+
+
+#addToCartBtn{
+     width: 150px;
+     padding: 5px;
+     border: 5px;
+     color: #fff;
+     margin-top: 20px; margin-left: 25%;
+     background-color: vars.$base;
+     border: 1px solid vars.$base;
+     transition: background-color .2s ease-out, color .2s ease-out;
+     &:hover{
+          background-color: #fff;
+          color: vars.$base;
+          // border: 2px solid vars.$base;
+     }
 }
 

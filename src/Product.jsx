@@ -4,12 +4,13 @@ import ReturnNav from "./components/ReturnNav";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import Header from "./components/Header";
-import AddItemBtn from './components/AddItemBtn'
-import CallBtn from './components/CallButton'
 import Styles from "./styles/product.module.scss";
+
 
 import { useContext } from "react";
 import AuthContext from "./stores/AuthContext";
+import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart';
+import Loader from './components/Loader'
 
 const PRODUCT_QUERY = gql`
   query Product($slug: String!) {
@@ -25,11 +26,10 @@ const PRODUCT_QUERY = gql`
   }
 `;
 
+
+
+
 const Product = () => {
-
-  const [outOfStock, setOutOfStock] = useState(false)
-
-  const { user, login, authReady } = useContext(AuthContext);
 
   let { slug } = useParams();
 
@@ -37,8 +37,38 @@ const Product = () => {
     variables: { slug }
   });
 
-  if (loading) return <p>...Loading</p>;
+  const [itemQuantity, setItemQuantity] = useState(1)
+
+
+  const { user, login, authReady } = useContext(AuthContext);
+
+  const {addItem} = useShoppingCart()
+
+  function decreaseQuantity() {
+    if(itemQuantity > 1) {
+      setItemQuantity(itemQuantity - 1)
+    }
+  }
+
+
+  function increaseQuantity() {
+    setItemQuantity(itemQuantity + 1)
+  }
+
+  
+
+  if (loading) return <Loader sz="lg" />
   if (error) return <p>There was an error: {error}</p>;
+
+  const product = data.products.map((product) => product)
+
+  function addToCart (){
+    console.log("added")
+    addItem(product, {count: itemQuantity})
+    setItemQuantity(1)
+  }
+
+
    
   return (
     <main>
@@ -65,7 +95,7 @@ const Product = () => {
                   <h2>{name}</h2>
                   <p>{description}</p>
                   <small>
-                    <span>NGN</span> {price}
+                    <span style={{color: "forestgreen" }}>NGN</span> {price}
                   </small>
                   <p id={Styles.quantity}>
                     {" "}
@@ -74,17 +104,24 @@ const Product = () => {
                       ? "out of stock"
                       : quantity}
                   </p>
+                  <section className={Styles.quantityCounter}>
+                    <button id={Styles.increaseBtn} onClick={() => decreaseQuantity()}>
+                      -
+                    </button>
+                    <div id={Styles.quantity}>
+                      <p>{itemQuantity}</p>
+                    </div>
+                    <button id={Styles.decraseBtn} onClick={() => increaseQuantity()}>
+                      +
+                    </button>
+                  </section>
                   {authReady && (
                     <>
                       {user && (
-                        <AddItemBtn
-                          id={id}
-                          price={price}
-                          img={bannerImage.url}
-                          name={name}
-                          slug={slug}
-                        />
-                      )}
+                        <button id={Styles.addToCartBtn} onClick={() => addToCart()}>
+                          Add To cart
+                        </button>
+                        )}
                       {!user && (
                         <p id={Styles.info}>
                           To purchase an item, you have to sign in

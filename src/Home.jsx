@@ -4,6 +4,7 @@ import LinkButton from './components/LinkButton';
 import Styles from './styles/home.module.scss'
 import {Link} from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
+import Loader from './components/Loader'
 
 
 
@@ -24,7 +25,7 @@ const Home = () => {
   const { data, loading, error } = useQuery(CATEGORY_QUERY)
 
 
-  if(loading) return <p>...Loading</p>
+  if(loading) return <Loader sz="md"/>
   if (error) return <p>There was an error:{error}</p>
   
     return(

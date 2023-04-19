@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet'
 import { useQuery, gql } from "@apollo/client";
 import ReturnNav from './components/ReturnNav'
 import Header from './components/Header'
+import Loader from './components/Loader'
 import Styles from './styles/category.module.scss'
 
 
@@ -37,7 +38,7 @@ const Category = () => {
 
 
 
-    if (loading) return <p>...Loading</p>;
+    if (loading) return <Loader sz="md"/>;
     if (error) return <p>There was an error: {error}</p>;
   
 
@@ -50,19 +51,19 @@ const Category = () => {
             
 
             return (
-              <section key={`cat-${id}`}>
+              <section className={Styles.catWrapper} key={`cat-${id}`}>
                 <Helmet>
                   <title>Fundamental | {name}</title>
                 </Helmet>
                 <Header title={name} img={banner.url} />
-                <h2>{name}</h2>
-                <section>
+                <section className={Styles.catProducts}>
                   {
-                    products.map(({ id, name, slug, description }) => {
+                    products.map(({ id, name, slug, description, price }) => {
                       return (
                         <Link to={`/product/${slug}`} key={`prod-${id}`}>
                           <h4>{name}</h4>
-                          <p>{description}</p>
+                          <p id={Styles.desc}>{description}</p>
+                          <p id={Styles.price}> <span style={{color: "forestgreen"}}>NGN</span> {price}</p>
                         </Link>
                       )
                     })

@@ -12,6 +12,7 @@ import Home from "./Home";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./stores/AuthContext";
+import Loader from './components/Loader'
 
 import { useQuery, gql } from "@apollo/client";
 
@@ -36,7 +37,7 @@ const CATEGORY_QUERY = gql`
 function App() {
   const { data, loading, error } = useQuery(CATEGORY_QUERY);
 
-  if (loading) return <h2>...Loading</h2>;
+  if (loading) return <Loader sz="xl" />;
   if (error) return <h2>There was an error{error}</h2>;
 
   return (

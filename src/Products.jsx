@@ -5,6 +5,8 @@ import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 import Styles from "./styles/products.module.scss";
 import Header from './components/Header'
+import Loader from './components/Loader'
+
 
 const CATEGORY_QUERY = gql`
   query Category {
@@ -27,7 +29,7 @@ const CATEGORY_QUERY = gql`
 const Products = () => {
   const { data, loading, error } = useQuery(CATEGORY_QUERY);
 
-  if (loading) return <h2>Loading ...</h2>;
+  if (loading) return <Loader sz="md" />
   if (error) return <p>There was an error {error}</p>;
 
   return (

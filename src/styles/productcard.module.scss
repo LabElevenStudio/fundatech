@@ -3,12 +3,32 @@
 
 
 .prodCard p{
-    font-size: .9rem;
-    inline-size: 300px;
+    font-size: .8rem;
+    max-inline-size: 300px;
     word-wrap: break-word;
+    font-weight: 300;
+    &::first-letter{
+        text-transform: uppercase;
+    }
 }
 
 .prodCard small span{
-    font-weight: 600;
+    font-weight: 300;
     font-family: vars.$fontsans;
+}
+
+.prodCard h3{
+    color: vars.$deepblue;
+    font-weight: 700;
+    font-family: vars.$fontsans;
+}
+
+.prodCard{
+    width: 300px;
+    transition: box-shadow .3s ease-out;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover{
+        box-shadow: vars.$shadow;
+    }
 }

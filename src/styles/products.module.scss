@@ -19,6 +19,7 @@
         width: inherit;
         padding: 5px 80px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         font-family: vars.$fontsans;
@@ -27,6 +28,7 @@
 
 .category nav h3{
     font-size: 1.8rem;
+    color: vars.$base;
 }
 
 .productList{

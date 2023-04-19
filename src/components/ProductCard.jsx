@@ -16,7 +16,7 @@ const ProductCategory = ({prod}) => {
         <h3>{name}</h3>
         <p>{description}</p>
         <small>
-          <span>NGN</span> {price}
+          <span style={{color: "forestgreen"}}>NGN</span> {price}
         </small>
       </section>
     );

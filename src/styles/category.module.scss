@@ -1,0 +1,43 @@
+@use './vars';
+@use 'sass:math';
+
+
+
+
+.catWrapper{
+	padding: 5px;
+}
+
+.catProducts{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	a{
+		padding: 20px;
+		width: 350px;
+		transition: box-shadow .3s ease-out;
+		&:hover{
+			box-shadow: vars.$shadow;
+			border-radius: 5px;
+		}
+	}
+	h4{
+		font-size: math.div(vars.$title, 1.5);
+		color: vars.$base;
+		font-weight: 700;
+	}
+	p#desc{
+		font-size: 1.2rem;
+		&:first-letter{
+			text-transform: uppercase;
+		}
+	}
+	p#price{
+		font-size: .8rem;
+		font-weight: 700;
+	}
+}

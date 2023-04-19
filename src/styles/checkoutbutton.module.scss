@@ -1,0 +1,20 @@
+@use './vars';
+
+
+.cartStatus{
+	margin-top: 20px;
+	color: vars.$orange;
+}
+
+
+.checkoutBtn{
+	background: forestgreen;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px; margin-top: 20px;
+	&:disabled{
+		background: lightgray;
+		cursor: not-allowed;
+	}
+}
+

@@ -10,7 +10,37 @@ import {ApolloClient, ApolloProvider, InMemoryCache, gql} from '@apollo/client'
 //usesnipcart import
 //authcontext import optional?
 
-import {SnipcartProvider} from 'use-snipcart'
+{/* import {SnipcartProvider} from 'use-snipcart' */}
+import {CartProvider} from 'use-shopping-cart'
+
+import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react'
+
+import chakraTheme from '@chakra-ui/theme'
+
+const {
+      Modal, 
+      ModalOverlay, 
+      ModalContent, 
+      ModalHeader, 
+      ModalBody, 
+      ModalCloseButton, 
+      Spinner,
+      Text
+    } = chakraTheme.components
+
+
+const theme = extendBaseTheme({
+  components: {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalCloseButton,
+    Spinner,
+    Text
+  }
+})
 
 
 const client = new ApolloClient({
@@ -27,11 +57,21 @@ const client = new ApolloClient({
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
-    <SnipcartProvider>
+    <ChakraProvider theme={theme}> 
+    <CartProvider
+    mode="payment"
+    cartMode="client-only"
+    stripe=""
+    currency="USD"
+    successUrl={`${import.meta.env.VITE_PUBLIC_URL}/success`}
+    cancleUrl={`${import.meta.env.VITE_PUBLIC_URL}/?success=false`}
+    shouldPersist={true}
+  >
     <ApolloProvider client={client} >
     <App />
     </ApolloProvider>
-    </SnipcartProvider>
+    </CartProvider>
+    </ChakraProvider>
     </Router>
   </React.StrictMode>
 )
