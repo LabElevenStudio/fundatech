@@ -23,7 +23,7 @@ const CheckoutButton = () => {
 		publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC
 	}
 
-	{/* console.log(typeof import.meta.env.VITE_PAYSTACK_PUBLIC) */}
+	
 
 	function onSuccess(reference){
 		console.log(reference)
