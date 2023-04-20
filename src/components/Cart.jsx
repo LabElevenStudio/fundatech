@@ -1,5 +1,5 @@
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
-import CartItem from './cartItem'
+import CartItem from './CartItem'
 import Styles from '../styles/cart.module.scss'
 import CheckoutButton from './CheckoutButton'
 
