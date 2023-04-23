@@ -1,8 +1,11 @@
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import { useNavigate } from 'react-router-dom';
 
 import Styles from '../styles/flw.module.scss'
 
 export default function UsingFlw({email, phone, name, amount}) {
+
+  const navigate = useNavigate()
 
   const publicKey = import.meta.env.VITE_FLW_KEY
 
@@ -37,7 +40,9 @@ export default function UsingFlw({email, phone, name, amount}) {
                console.log(response);
                 closePaymentModal() // this will close the modal programmatically
             },
-            onClose: () => {},
+            onClose: () => {
+              navigate('/success')
+            },
           });
         }}
       >

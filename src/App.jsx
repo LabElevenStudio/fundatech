@@ -7,12 +7,14 @@ import Product from "./Product";
 import Category from "./Category";
 import Projects from "./Projects";
 import NotFound from "./404";
+import Success from './Success'
 import Home from "./Home";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./stores/AuthContext";
 import Loader from './components/Loader'
 import {Helmet} from 'react-helmet'
+
 
 import { useQuery, gql } from "@apollo/client";
 
@@ -57,6 +59,7 @@ function App() {
             <Route path="product/:slug" element={<Product />} />
             <Route path="category/:slug" element={<Category />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="success" element={<Success />} />
           </Routes>
           
         </Layout>
