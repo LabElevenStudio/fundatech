@@ -59,6 +59,7 @@ function App() {
             <Route path="product/:slug" element={<Product />} />
             <Route path="category/:slug" element={<Category />} />
             <Route path="*" element={<NotFound />} />
+            {/* Make success page a modal!!! */}
             <Route path="success" element={<Success />} />
           </Routes>
           
