@@ -5,11 +5,14 @@ import { IconContext } from 'react-icons'
 
 
 
+
 const CartItem = ({item}) => {
 
 	const {removeItem} = useShoppingCart()
 
-	const {name, price, bannerImage} = item[0]
+	console.log('item', item)
+
+	const {bannerImage, name, price, value, formattedPrice, formattedValue, quantity} = item
 
 	function removeItemFromCart(){
 		removeItem(item.id)
@@ -26,10 +29,11 @@ const CartItem = ({item}) => {
 			<section>
 				<img id={Styles.itemImage} src={bannerImage.url} alt={name} />
 				<h2>Product: {name}</h2>
-				<p id={Styles.quant}>Quantity: {item.quantity}</p>
-				<p id={Styles.price}>Base price: <span style={{color: "forestgreen" }} >NGN</span> {price}</p>
+				<p id={Styles.quant}>Quantity: {quantity}</p>
+				<p className={Styles.price}>Base price: <span style={{color: "forestgreen" }} >NGN</span> {price}</p>
+				<p className={Styles.price}>Total price: <span style={{color: "forestgreen" }} >NGN</span> {value}</p>
 			</section>
-		</section>
+		</section> 
 		)
 }
 

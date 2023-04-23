@@ -62,9 +62,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     mode="payment"
     cartMode="client-only"
     stripe=""
-    currency="USD"
+    currency="NGN"
     successUrl={`${import.meta.env.VITE_PUBLIC_URL}/success`}
     cancleUrl={`${import.meta.env.VITE_PUBLIC_URL}/?success=false`}
+    allowedCountries={["NG"]}
     shouldPersist={true}
   >
     <ApolloProvider client={client} >

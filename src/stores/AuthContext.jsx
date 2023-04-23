@@ -18,14 +18,12 @@ export const AuthContextProvider = ({children}) => {
         //event listener for logout
         netlifyIdentity.on('logout', () => {
             setUser(null)
-            console.log('logout event')
         })
         
         //event listener for login
         netlifyIdentity.on('login', (user) => {
             setUser(user)
             netlifyIdentity.close()
-            console.log('login event')
         })
 
         netlifyIdentity.on('init', (user) => {

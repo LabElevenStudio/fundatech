@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import About from "./About";
 import Services from "./Services";
 import Contact from "./Contact";
@@ -13,6 +12,7 @@ import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./stores/AuthContext";
 import Loader from './components/Loader'
+import {Helmet} from 'react-helmet'
 
 import { useQuery, gql } from "@apollo/client";
 
@@ -42,6 +42,9 @@ function App() {
 
   return (
     <main>
+    <Helmet>
+      <title>Fundamental Technology | Home</title>
+    </Helmet>
       <AuthContextProvider>
         <Layout>
           <Routes>
