@@ -40,7 +40,7 @@ const Product = () => {
   const [itemQuantity, setItemQuantity] = useState(1)
 
 
-  const { user, login, authReady } = useContext(AuthContext);
+  const { user, authReady } = useContext(AuthContext);
 
   const {addItem} = useShoppingCart()
 
@@ -60,11 +60,21 @@ const Product = () => {
   if (loading) return <Loader sz="lg" />
   if (error) return <p>There was an error: {error}</p>;
 
-  const product = data.products.map((product) => product)
+  const prod = data.products.map((product) => product)
+
+  const productArr = data.products
+
+  let prodObj;
+
+
+  for(let i = 0; i < productArr.length; i++){
+    prodObj = productArr[i]
+  }
+
 
   function addToCart (){
     console.log("added")
-    addItem(product, {count: itemQuantity})
+    addItem(prodObj, {count: itemQuantity})
     setItemQuantity(1)
   }
 
@@ -94,8 +104,9 @@ const Product = () => {
                 <section className={Styles.productDetails}>
                   <h2>{name}</h2>
                   <p>{description}</p>
-                  <small>
-                    <span style={{color: "forestgreen" }}>NGN</span> {price}
+                  <small style={{color: "forestgreen", fontWeight: 600}}>
+                    {/* <span style={{color: "forestgreen" }}>NGN</span> {price} */}
+                  {formatCurrencyString({value: price * 100, currency: "NGN", language: 'EN'})}
                   </small>
                   <p id={Styles.quantity}>
                     {" "}

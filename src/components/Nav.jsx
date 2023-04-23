@@ -86,7 +86,6 @@ const Nav = () => {
               <span className={Styles.loginWrapper}>
                 <IconContext.Provider value={{ size: "1.5em", className: `${Styles.cartIcon}` }}>
                   <FaShoppingCart onClick={() => {
-                    // handleCartClick()
                     setOverlay(<OverlayOne />)
                     onOpen()
                   }} />

@@ -1,0 +1,15 @@
+@use './vars';
+
+
+
+.flwButton button{
+	color: #000;
+	background-color: vars.$orange;
+	width: 200px;
+	padding: 15px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 20%;
+	cursor: pointer;
+}
