@@ -63,8 +63,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     cartMode="client-only"
     stripe=""
     currency="NGN"
-    successUrl={`${import.meta.env.VITE_PUBLIC_URL}/success`}
-    cancleUrl={`${import.meta.env.VITE_PUBLIC_URL}/?success=false`}
+    successUrl={`${import.meta.env.BASE_URL}/success`}
+    cancleUrl={`${import.meta.env.BASE_URL}/?success=false`}
     allowedCountries={["NG"]}
     shouldPersist={true}
   >
