@@ -13,13 +13,6 @@ const CheckoutButton = () => {
 
 
 
-		/*if(cartCount > 0){
-			setStatus("loading")
-		}else{
-			setStatus("no-items")
-		} */
-
-
 	return(
 		<section>
 			<section className={Styles.cartStatus}>

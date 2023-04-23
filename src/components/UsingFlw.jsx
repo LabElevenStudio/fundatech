@@ -6,10 +6,6 @@ export default function UsingFlw({email, phone, name, amount}) {
 
   const publicKey = import.meta.env.VITE_FLW_KEY
 
-  console.log(publicKey)
-
-
-  
 
   const config = {
     public_key: publicKey,

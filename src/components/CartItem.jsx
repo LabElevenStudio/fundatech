@@ -10,8 +10,6 @@ const CartItem = ({item}) => {
 
 	const {removeItem} = useShoppingCart()
 
-	console.log('item', item)
-
 	const {bannerImage, name, price, value, formattedPrice, formattedValue, quantity} = item
 
 	function removeItemFromCart(){
