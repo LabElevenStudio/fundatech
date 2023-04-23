@@ -12,12 +12,6 @@ const CheckoutButton = () => {
 	const {cartCount, totalPrice} = useShoppingCart()
 
 
-<<<<<<< HEAD
-	
-=======
-	
->>>>>>> payments
-
 
 		/*if(cartCount > 0){
 			setStatus("loading")
