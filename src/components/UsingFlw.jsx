@@ -15,10 +15,10 @@ export default function UsingFlw({email, phone, name, amount}) {
     tx_ref: Date.now(),
     amount,
     currency: 'NGN',
-    payment_options: 'card,ussd,banktransfer',
+    payment_options: 'card, ussd, banktransfer',
     customer: {
       email,
-       phone_number: phone,
+      phone_number: phone,
       name: name,
     },
     customizations: {

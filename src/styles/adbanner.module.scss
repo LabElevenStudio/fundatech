@@ -12,9 +12,13 @@
 .contacts{
     width: 40%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-aroun;
     font-family: vars.$fontsans;
     p{
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
         color: #fff;
         font-size: .8rem;
     }
@@ -30,5 +34,10 @@
     list-style: none;
     li a{
         color: #fff;
+        transition: color .2s ease;
+        cursor: pointer;
+        &:hover{
+            color: vars.$base;
+        }
     }
 }

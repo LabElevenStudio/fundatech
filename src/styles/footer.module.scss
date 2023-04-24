@@ -28,6 +28,7 @@
 
 .footerInner{
     img{
+        width: 250px;
         @media #{vars.$media-mobile-l}{
             width: 150px;
         }
@@ -37,6 +38,9 @@
         list-style: none;
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 20px;
         li{
             width: 25px;
             height: 25px;
@@ -44,25 +48,44 @@
             place-items: center;
             border-radius: 50%;
             background-color: #fff;
+            cursor: pointer;
         }
     }
 
 }
 
+.icons:hover{
+    color: vars.$base;
+}
+
 
 .footerNav{
+    width: 40%;
+    flex-flow: wrap column;
+    justify-content: space-between;
+    align-items: center;
     label{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-right;
         color: #fff;
         font-family: vars.$fontsans;
+        margin-bottom: 15px;
         @media #{vars.$media-mobile-l}{
             inline-size: 300px;
             word-wrap: break-word;
             text-align: center;
         }
     }
-    p span{
-        margin-right: 10px;
-        margin-top: 10px;
+    p{
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;  
+        span{
+            margin-right: 10px;
+            margin-top: 10px;
+        }
     }
     .formInput input{
         width: 300px;
@@ -73,6 +96,11 @@
         background-color: #000;
         border: 1px solid #fff;
         color: #fff;
+        &:focus{
+            border: 1px solid vars.$base;
+            background-color: #fff;
+            color: #000;
+        }
     }
     .formInput button{
         height: 45px;
@@ -118,15 +146,15 @@
         // justify-content: center;
         // align-items: center;
         dt{
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
+            color: vars.$base;
+            text-align: left;
+            font-weight: 700;
             font-family: vars.$fontsans;
         }
         dd{
             color: #fff;
             text-align: left;
-            font-weight: 400;
+            font-weight: 300;
             font-family: vars.$fontslab;
         }
         a{
@@ -140,14 +168,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0px 80px;
     @media #{vars.$media-mobile-l}{
         margin-top: 20px;
         flex-direction: column-reverse;
     }
     p{
         color: #fff;
-        font-family: vars.$fontslab;
+        font-family: vars.$fontsans;
         font-size: .83rem;
         @media #{vars.$media-mobile-s}{
             font-size: .7rem;

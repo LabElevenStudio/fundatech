@@ -1,7 +1,8 @@
 import Styles from '../styles/footer.module.scss'
-import {FaFacebookF, FaTwitter, FaInstagram, FaEnvelope} from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { IconContext } from 'react-icons'
 import TextButton from './TextButton'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -12,34 +13,36 @@ export default function Footer() {
         <div className={Styles.footerContent}>
           <div className={Styles.footerInner}>
             <img src="/images/logo-white.svg" alt="Funda Paints Logo" className="logo" />
-            <ul>
-              <li>
-                <FaFacebookF />
-              </li>
-              <li>
-                <FaTwitter />
-              </li>
-              <li>
-                <FaInstagram />
-              </li>
-            </ul>
+            <IconContext.Provider value={{ className: `${Styles.icons}` }}>
+              <ul>
+                <li>
+                  <FaFacebookF />
+                </li>
+                <li>
+                  <FaTwitter />
+                </li>
+                <li>
+                  <FaInstagram />
+                </li>
+              </ul>
+            </IconContext.Provider>
           </div>
           <div className={Styles.footerNav}>
             <form method="POST" data-netlify="true">
-            <label htmlFor="footer-contact">
-              <p><span><FaEnvelope /></span>Stay up to date on the latest from Fundamental Technology</p>
-              <span className={Styles.formInput}>
-                <input type="email" id="footer-contact" placeholder="Enter Your Email Address" />
-                <button type="submit"> Submit </button>
-              </span>
+              <label htmlFor="footer-contact">
+                <p><span><FaEnvelope /></span>Stay up to date on the latest from Fundamental Technology</p>
+                <span className={Styles.formInput}>
+                  <input type="email" id="footer-contact" placeholder="Enter Your Email Address" />
+                  <button type="submit"> Submit </button>
+                </span>
               </label>
-              </form>
+            </form>
             <nav className={Styles.footerNavInner}>
               <dl>
                 <dt>Support</dt>
                 <dd>
                   <Link to="/contacat">Contact Us</Link>
-                  </dd>
+                </dd>
                 <dd>FAQ</dd>
                 <dd>Consultation</dd>
               </dl>
@@ -50,17 +53,17 @@ export default function Footer() {
                 </dd>
                 <dd>
                   <Link to="/products">Our Products</Link>
-                  </dd>
+                </dd>
                 <dd>
                   Newsroom
-                  </dd>
+                </dd>
               </dl>
             </nav>
           </div>
         </div>
         <div className={Styles.footerBottom}>
           <p>Copyright &copy; {new Date().getFullYear()} Funda Technology</p>
-          <p>Powered by Funda Technology</p>
+          <p>Powered by Fundamental Technology</p>
         </div>
       </footer>
     </>
