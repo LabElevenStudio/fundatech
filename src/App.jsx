@@ -12,35 +12,11 @@ import Home from "./Home";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./stores/AuthContext";
-import Loader from './components/Loader'
 import {Helmet} from 'react-helmet'
 
 
-import { useQuery, gql } from "@apollo/client";
-
-const CATEGORY_QUERY = gql`
-  query Category {
-    categories {
-      id
-      slug
-      name
-      description
-      products {
-        id
-        name
-        slug
-        description
-        price
-      }
-    }
-  }
-`;
-
 function App() {
-  const { data, loading, error } = useQuery(CATEGORY_QUERY);
-
-  if (loading) return <Loader sz="xl" />;
-  if (error) return <h2>There was an error{error}</h2>;
+  
 
   return (
     <main>
