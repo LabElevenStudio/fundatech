@@ -41,7 +41,7 @@ export default function UsingFlw({email, phone, name, amount}) {
                 closePaymentModal() // this will close the modal programmatically
             },
             onClose: () => {
-              navigate('/success')
+              
             },
           });
         }}

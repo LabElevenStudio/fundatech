@@ -59,7 +59,6 @@ function App() {
             <Route path="product/:slug" element={<Product />} />
             <Route path="category/:slug" element={<Category />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="success" element={<Success />} />
           </Routes>
           
         </Layout>
