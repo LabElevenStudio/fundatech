@@ -5,11 +5,6 @@ import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import Header from "./components/Header";
 import Styles from "./styles/product.module.scss";
-
-
-import { useContext } from "react";
-import AuthContext from "./stores/AuthContext";
-import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart';
 import Loader from './components/Loader'
 
 const PRODUCT_QUERY = gql`
@@ -37,46 +32,10 @@ const Product = () => {
     variables: { slug }
   });
 
-  const [itemQuantity, setItemQuantity] = useState(1)
-
-
-  const { user, authReady } = useContext(AuthContext);
-
-  const {addItem} = useShoppingCart()
-
-  function decreaseQuantity() {
-    if(itemQuantity > 1) {
-      setItemQuantity(itemQuantity - 1)
-    }
-  }
-
-
-  function increaseQuantity() {
-    setItemQuantity(itemQuantity + 1)
-  }
-
-  
 
   if (loading) return <Loader sz="lg" />
   if (error) return <p>There was an error: {error}</p>;
 
-  const prod = data.products.map((product) => product)
-
-  const productArr = data.products
-
-  let prodObj;
-
-
-  for(let i = 0; i < productArr.length; i++){
-    prodObj = productArr[i]
-  }
-
-
-  function addToCart (){
-    console.log("added")
-    addItem(prodObj, {count: itemQuantity})
-    setItemQuantity(1)
-  }
 
 
    
@@ -103,43 +62,7 @@ const Product = () => {
                 ></div>
                 <section className={Styles.productDetails}>
                   <h2>{name}</h2>
-                  <p>{description}</p>
-                  <small style={{color: "forestgreen", fontWeight: 600}}>
-                    {/* <span style={{color: "forestgreen" }}>NGN</span> {price} */}
-                  {formatCurrencyString({value: price * 100, currency: "NGN", language: 'EN'})}
-                  </small>
-                  <p id={Styles.quantity}>
-                    {" "}
-                    quantity available:{" "}
-                    {quantity <= 0 || quantity === null
-                      ? "out of stock"
-                      : quantity}
-                  </p>
-                  <section className={Styles.quantityCounter}>
-                    <button id={Styles.increaseBtn} onClick={() => decreaseQuantity()}>
-                      -
-                    </button>
-                    <div id={Styles.quantity}>
-                      <p>{itemQuantity}</p>
-                    </div>
-                    <button id={Styles.decraseBtn} onClick={() => increaseQuantity()}>
-                      +
-                    </button>
-                  </section>
-                  {authReady && (
-                    <>
-                      {user && (
-                        <button id={Styles.addToCartBtn} onClick={() => addToCart()}>
-                          Add To cart
-                        </button>
-                        )}
-                      {!user && (
-                        <p id={Styles.info}>
-                          To purchase an item, you have to sign in
-                        </p>
-                      )}
-                    </>
-                  )}
+                  <p>{description}</p>                 
                 </section>
               </header>
               <main className={Styles.productDescription}>

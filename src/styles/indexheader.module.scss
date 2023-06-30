@@ -12,5 +12,12 @@
         font-size: 1rem;
         text-transform: capitalize;
         margin-top: -40px;
+        @media #{vars.$media-mobile-s}{
+            font-size: .7rem;
+            text-align: center;
+        }
+    }
+    @media #{vars.$media-mobile-s}{
+        height: 60vh;
     }
 }

@@ -7,12 +7,16 @@
     justify-content: space-around;
     align-items: center;
     background-color: vars.$deepblue;
+    @media #{vars.$media-mobile-s}{
+        height: 150px;
+        flex-direction: column;
+    }
 }
 
 .contacts{
     width: 40%;
     display: flex;
-    justify-content: space-aroun;
+    justify-content: space-around;
     font-family: vars.$fontsans;
     p{
         width: 100%;
@@ -21,9 +25,18 @@
         align-items: center;
         color: #fff;
         font-size: .8rem;
+        @media #{vars.$media-mobile-s}{
+            justify-content: center;
+            row-gap: 20px;
+        }
     }
     p span{
         margin-right: 10px;
+    }
+    @media #{vars.$media-mobile-s}{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -39,5 +52,8 @@
         &:hover{
             color: vars.$base;
         }
+    }
+    @media #{vars.$media-mobile-s}{
+        column-gap: 20px;
     }
 }

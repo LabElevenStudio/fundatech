@@ -18,6 +18,9 @@
             width: 60%;
         }
     }
+    @media #{vars.$media-mobile-s}{
+        
+    }
 }
 
 .logo{
@@ -26,7 +29,7 @@
 
 
 .navItems > ul{
-    width: 75%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,85 +39,11 @@
         font-family: vars.$fontsans;
         font-size: .86rem;
     }
+    
 }
 
 .logo a img{
     max-width: 100px;
-}
-
-
-.navWrapper ul .cta{
-    display: flex;
-    width: 500px;
-    justify-content: space-between;
-    align-items: center;
-    p{
-        font-size: .8rem;
-        font-family: vars.$fontsans;
-        margin-left: -40px;
-        cursor: pointer;
-    }
-    a:first-child{
-        margin-right: 20px;
-    }
-}
-
-.cartIcon{
-    color: black;
-    cursor: pointer;
-    position: relative;
-    left: -20%;
-    z-index: 1;
-}
-
-.loginWrapper{
-    width: 40%;
-    height: auto;
-    display: flex;
-    justify-content: space-bewteen;
-    align-items: center;
-    position: relative;
-}
-
-#cartCount{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    color: #fff;
-    font-weight: 600;
-    position: absolute;
-    top: 50%; left: -10%;
-    background: vars.$base;
-    z-index: 20;
-    display: grid;
-    place-items: center;
-}
-
-.userIcon{
-    color: vars.$deepblue;
-    cursor: pointer;
-}
-
-.userProfile{
-    color: vars.$orange;
-}
-
-.chevron{
-    color: vars.$orange;
-}
-
-#signupbtn{
-    background-color: vars.$base;
-    padding: 5px 20px;
-    color: #fff;
-    position: relative;
-    border: 2px solid vars.$base;
-    margin-left: 20px;
-    transition: background-color .3s ease-out, color .3s ease-out;
-    &:hover{
-        background-color: #fff;
-        color: vars.$base;
-    }
 }
 
 

@@ -21,6 +21,15 @@
             color: #fff;
         }
     }
+    @media #{vars.$media-mobile-s}{
+        width: 100px;
+        height: 30px;
+        font-weight: 400;
+        button{
+            font-size: 12px;
+            padding: 2px;
+        }
+    }
 }
 
 .secondary{
@@ -42,6 +51,15 @@
             background-color: #fff;
             color: vars.$base;
             border: 2px solid vars.$base;
+        }
+    }
+    @media #{vars.$media-mobile-s}{
+        width: 100px;
+        height: 30px;
+        font-weight: 400;
+        button{
+            font-size: 12px;
+            padding: 2px;
         }
     }
 }
@@ -68,5 +86,14 @@
                 background-color: vars.$base;
                 color: #fff;
             }
+    }
+    @media #{vars.$media-mobile-s}{
+        width: 100px;
+        height: 30px;
+        font-weight: 400;
+        button{
+            font-size: 12px;
+            padding: 2px;
+        }
     }
 }

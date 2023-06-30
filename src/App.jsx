@@ -11,7 +11,6 @@ import Success from './Success'
 import Home from "./Home";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
-import { AuthContextProvider } from "./stores/AuthContext";
 import {Helmet} from 'react-helmet'
 
 
@@ -23,7 +22,6 @@ function App() {
     <Helmet>
       <title>Fundamental Technology | Home</title>
     </Helmet>
-      <AuthContextProvider>
         <Layout>
           <Routes>
             <Route index element={<Home />} />
@@ -38,7 +36,6 @@ function App() {
           </Routes>
           
         </Layout>
-      </AuthContextProvider>
     </main>
   );
 }
