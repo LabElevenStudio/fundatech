@@ -14,13 +14,10 @@ const CATEGORY_QUERY = gql`
       id
       slug
       name
-      description
       products {
         id
         name
         slug
-        description
-        price
       }
     }
   }

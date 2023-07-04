@@ -21,10 +21,14 @@
     height: 100vh;
     background-color: vars.$deepblue;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(autofill, minmax(300, 1fr));
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: 1fr;
     justify-content: space-evenly;
     align-items: center;
+    @media #{vars.$media-mobile-s}{
+        height: 200vh;
+    }
 }
 
 
@@ -55,11 +59,18 @@
         color: #fff;
         font-size: 1.8rem;
         font-family: vars.$fontslab;
+        @media #{vars.$media-mobile-s}{
+            font-size: 1.3rem;
+        }
     }
     svg{
         width: 80px;
         height: 80px;
         fill: #fff;
+        @media #{vars.$media-mobile-s}{
+            width: 30px;
+            height: 30px;
+        }
     }
     hr{
         height: 400px;
@@ -69,6 +80,12 @@
         left: 99%;
         border-color: #fff;
         background: #fff;
+        @media #{vars.$media-mobile-s}{
+            height: 3px;
+            width: 100%;
+            left: 0;
+            top: 100%;
+        }
     }
 }
 
@@ -87,6 +104,10 @@
         height: 60px;
         fill: vars.$deepblue;
         margin-top: 20px;
+        @media #{vars.$media-mobile-s}{
+            width: 25px;
+            height: 25px;
+        }
     }
     p{
         font-family: vars.$fontslab;
@@ -102,7 +123,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;;
+    margin-bottom: 80px;
+    @media #{vars.$media-mobile-s}{
+        margin-top: 20px;
+    }
 }
 
 .formControl{
@@ -111,6 +135,11 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    @media #{vars.$media-mobile-s}{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     label{
         font-size: 1.4rem;
         font-weight: 600;
@@ -118,6 +147,11 @@
         color: vars.$textcolor;
         text-transform: capitalize;
         margin-right: 20px;
+        @media #{vars.$media-mobile-s}{
+            margin-right: 0px;
+            font-size: 1rem;
+            font-weight: 500;
+        }   
     }
     input{
         width: 250px;
@@ -126,20 +160,32 @@
         border: .5px solid vars.$base;
         border-radius: 5px;
         font-family: vars.$fontsans;
+        @media #{vars.$media-mobile-s}{
+            width: 200px;
+        }
     }
     textarea{
         width: 250px;
-        height:150px;
+        height: 150px;
         font-family: vars.$fontsans;
         border: none;
         border: .5px solid vars.$base;
         border-radius: 5px;
+        @media #{vars.$media-mobile-s}{
+            width: 200px;
+        }
     }
     &:first-child input{
         margin-left: 30px;
+        @media #{vars.$media-mobile-s}{
+            margin-left: 0px;
+        }
     }
     &:nth-child(4) label{
         margin-left: -100px;
+        @media #{vars.$media-mobile-s}{
+            margin-left: 0px;
+        }
     }
 }
 
@@ -154,6 +200,9 @@
     font-family: vars.$fontslab;
     margin-left: 80px;
     transition: color .2s ease-out, background .2s ease-out;
+    @media #{vars.$media-mobile-s}{
+        margin-left: 0px;
+    }
     &:hover{
         color: vars.$base;
         background: #fff;

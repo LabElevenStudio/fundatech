@@ -6,17 +6,20 @@ import { useQuery, gql } from "@apollo/client";
 import Header from "./components/Header";
 import Styles from "./styles/product.module.scss";
 import Loader from './components/Loader'
+import ReactMarkdown from 'react-markdown'
 
 const PRODUCT_QUERY = gql`
   query Product($slug: String!) {
     products(where: { slug: $slug }) {
       id
       name
-      description
-      quantity
-      price
+      details
+      directions
       bannerImage
       slug
+      productData{
+        html
+      }
     }
   }
 `;
@@ -43,7 +46,9 @@ const Product = () => {
     <main>
       {data &&
         data.products.map(
-          ({ id, name, price, quantity, bannerImage, description, slug }) => (
+          ({ id, name, bannerImage, details, directions, productData, slug }) => {
+            const markup = {__html: productData.html}
+          return (
             <main key={`product-${id}`}>
               <Helmet>
                 <title>Fundamental Technology | {name} </title>
@@ -62,15 +67,20 @@ const Product = () => {
                 ></div>
                 <section className={Styles.productDetails}>
                   <h2>{name}</h2>
-                  <p>{description}</p>                 
+                  <ReactMarkdown>{details}</ReactMarkdown>                 
                 </section>
               </header>
               <main className={Styles.productDescription}>
-                <p>{description}</p>
+                {productData ? 
+                  <section dangerouslySetInnerHTML={markup}></section>
+                  : null}
+                {
+                  directions ? <ReactMarkdown>{directions}</ReactMarkdown> : null
+                }
               </main>
               <ReturnNav />
             </main>
-          )
+          )}
         )}
     </main>
   );

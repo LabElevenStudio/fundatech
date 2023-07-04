@@ -21,7 +21,7 @@ const Nav = () => {
 
     const [isLessThan320] = useMediaQuery('(max-width: 320px)')
 
-    const { isClose, isOpen, onClose } = useDisclosure
+    const { onOpen, isOpen, onClose } = useDisclosure
 
     const btnRef = useRef()
 
@@ -35,7 +35,7 @@ const Nav = () => {
           </NavLink>
         </li>
         {isLessThan320 ? (
-          <IconContext.Provider value={{color: "orange", className: `${Styles.hamburger}`}}>
+          <IconContext.Provider value={{color: "orange", ref:{btnRef}, onClick:{onOpen},className: `${Styles.hamburger}`}}>
             <FaBars />
           </IconContext.Provider>
           ) : (
@@ -61,6 +61,36 @@ const Nav = () => {
           )}
        
       </ul>
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerBody>
+            <ul>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">About</NavLink>
+              </li>
+              <li>
+                <NavLink to="/services">Services</NavLink>
+              </li>
+              <li>
+                <NavLink to="/projects">Projects</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Contact us</NavLink>
+              </li>
+            </ul>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </nav>
     );
 };

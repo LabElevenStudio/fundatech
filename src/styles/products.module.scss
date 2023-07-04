@@ -19,16 +19,22 @@
         width: inherit;
         padding: 5px 80px;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         font-family: vars.$fontsans;
+        @media #{vars.$media-mobile-s}{
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 }
 
 .category nav h3{
     font-size: 1.8rem;
     color: vars.$base;
+    @media #{vars.$media-mobile-s}{
+        font-size: 1.3rem;        
+    }
 }
 
 .productList{
@@ -41,4 +47,8 @@
     grid-template-rows: 1fr;
     padding: 10px 80px;
     margin-bottom: 50px;
+    @media #{vars.$media-mobile-s}{
+        padding: 10px 5px;    
+        position: relative; 
+    }
 }

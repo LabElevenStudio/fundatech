@@ -11,6 +11,9 @@
     margin-top: 50px;
     position: relative;
     z-index: 2;
+    @media #{vars.$media-mobile-s}{
+        margin-bottom: 300px;
+    }
     & > article{
         width: 100%;
         position: relative;
@@ -44,8 +47,14 @@
     top: 0;
     left: 0;
     z-index: 1;
+    @media #{vars.$media-mobile-s}{
+        justify-content: space-around;
+    }
     img{
         width: 200px;
+        @media #{vars.$media-mobile-s}{
+            width: 80px;
+        }
     }
     img:nth-child(2){
         opacity: .3;
@@ -61,22 +70,43 @@
     position: relative;
     top: -20px;
     z-index: 2;
+    @media #{vars.$media-mobile-s}{
+        flex-direction: column;
+        top: 60px;
+    }
     div{
         width: 180px;
         height: 200px;
         background-color: grey;
         box-shadow: 0px 4.07209px 25.4506px rgba(0, 0, 0, 0.25);
+        @media #{vars.$media-mobile-s}{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
         &:first-child{
             border-radius: 50px 50px 50px 0px;
+            @media #{vars.$media-mobile-s}{
+                border-radius: 20px 20px 20px 0px;
+            }
         }
         &:nth-child(2){
             border-radius: 50px 50px 50px 0px;
+            @media #{vars.$media-mobile-s}{
+                border-radius: 20px 20px 20px 0px;
+            }
         }
         &:nth-child(3){
             border-radius: 50px 50px 0px 50px;
+            @media #{vars.$media-mobile-s}{
+                border-radius: 20px 20px 0px 20px;
+            }
         }
         &:last-child{
             border-radius: 50px 50px 0px 50px;
+            @media #{vars.$media-mobile-s}{
+                border-radius: 20px 20px 0px 20px;
+            }
         }
     }
     
@@ -106,61 +136,71 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @media #{vars.$media-mobile-s}{
+        margin-top: 30px;
+    }
     figure{
         display: flex;
         width: 100%;
+        height: auto;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 30px;
+        padding: 5px 30px;   
+        @media #{vars.$media-mobile-s}{
+            flex-direction: column;
+            justify-content: center;
+        }
+
     }
     .flowRight{
         flex-direction: row-reverse;
+        @media #{vars.$media-mobile-s}{
+            flex-direction: column;
+        }
     }
 }
 
-.specializationGrid figure:first-child div{
+.specializationGrid figure div{
     width: 300px;
     height: 300px;
+    @media #{vars.$media-mobile-s}{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+.specializationGrid figure:first-child div{
     background-color: red;
     background: url('/images/specialties.png');
     background-position: center;
     align-items: cover;
 }
 .specializationGrid figure:last-child div{
-    width: 300px;
-    height: 300px;
     background-color: red;
     background: url('/images/textured.png');
     background-position: center;
     align-items: cover;
 }
 .specializationGrid figure:nth-child(2) div{
-    width: 300px;
-    height: 300px;
     background-color: red;
     background: url('/images/emulsion.png');
     background-position: center;
     align-items: cover;
 }
 .specializationGrid figure:nth-child(3) div{
-    width: 300px;
-    height: 300px;
     background-color: red;
     background: url('/images/enamel.png');
     background-position: center;
     align-items: cover;
 }
 .specializationGrid figure:nth-child(4) div{
-    width: 300px;
-    height: 300px;
     background-color: red;
     background: url('/images/industrial.png');
     background-position: center;
     align-items: cover;
 }
 .specializationGrid figure:nth-child(5) div{
-    width: 300px;
-    height: 300px;
     background-color: red;
     background: url('/images/roadmarking.png');
     background-position: center;
@@ -169,9 +209,15 @@
 
 .specializationGrid .flowLeft div{
     border-radius: 50px 50px 50px 0px;
+    @media #{vars.$media-mobile-s}{
+        border-radius: 20px 20px 20px 0px;
+    }
 }
 .specializationGrid .flowRight div{
     border-radius: 50px 50px 0px 50px;
+    @media #{vars.$media-mobile-s}{
+        border-radius: 20px 20px 20px 0px;
+    }
 }
 
 
@@ -181,6 +227,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    @media #{vars.$media-mobile-s}{
+        justify-content: flex-start;
+    }
     h3{
         font-family: vars.$fontslab;
         font-size: 1.3rem;
