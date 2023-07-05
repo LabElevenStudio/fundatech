@@ -2,7 +2,8 @@ import {Helmet} from 'react-helmet'
 import Header from './components/Header'
 import ReturnNav from './components/ReturnNav'
 import Styles from './styles/contact.module.scss'
-import { FaMapMarker, FaPhone, FaEnvelope, FaChevronCircleDown } from 'react-icons/fa'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faLocationDot, faPhone, faEnvelope, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 
 const Contact = () => {
@@ -19,7 +20,7 @@ const Contact = () => {
                 <p className={Styles.contactSubheading}>let's talk about your projects</p>
                 <section className={Styles.contactDetails}>
                     <section className={Styles.addressSection}>
-                       <FaMapMarker />
+                       <FontAwesomeIcon icon={faLocationDot} className={Styles.contactIcon} color="white" />
                         <h3>Address</h3>
                         <address>
                             <p>
@@ -31,24 +32,24 @@ const Contact = () => {
                                 29, olurin street, off iyana IIlogba, Ojuore, Ota, Ogun State, Nigeria
                             </p>
                         </address>
-                        <hr className={Styles.seperator}></hr>
                     </section>
+                        <div className={Styles.seperator}></div>
                     <section className={Styles.phoneSection}>
-                        <FaPhone />
+                        <FontAwesomeIcon icon={faPhone} className={Styles.contactIcon} color="white"/>
                         <h3>Phone</h3>
                         <p>+234 807 265 8726</p>
                         <p>+234 803 472 0852</p>
-                        <hr className={Styles.seperator}></hr>
                     </section>
+                        <div className={Styles.seperator}></div>
                     <section className={Styles.emailSection}>
-                        <FaEnvelope />
+                        <FontAwesomeIcon icon={faEnvelope} className={Styles.contactIcon} color="white" />
                         <h3>Email</h3>
                         <p>fundapaints@yahoo.com</p>
                     </section>
                 </section>
             </section>
             <section className={Styles.formWrapper}>
-                <FaChevronCircleDown />.
+                <FontAwesomeIcon icon={faChevronDown} className={Styles.contactIcon} color="black" />.
                 <h2>Let's make something together</h2>
                 <p>drop us a line.</p>
                 <form method="POST" data-netlify="true">
