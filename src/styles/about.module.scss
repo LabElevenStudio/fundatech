@@ -53,6 +53,9 @@
         align-items: center;
         margin-left: -22px;
         margin-bottom: 20px;
+        @media #{vars.$media-mobile-s}{
+            margin-left: 0;
+        }
         p{
             max-inline-size: 450px;
             color: vars.$textcolor;
