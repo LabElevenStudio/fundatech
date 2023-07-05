@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Styles from "../styles/nav.module.scss";
 import { useMediaQuery } from '@chakra-ui/react';
-import { useRef } from 'react';
+import {useRef, useState} from "react"
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
 import {
     Drawer,
     DrawerBody,
@@ -11,6 +13,8 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
+    Grid,
+    GridItem
 } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 
@@ -18,14 +22,20 @@ import { useDisclosure } from '@chakra-ui/react';
 
 
 const Nav = () => {
+  
+    const [size, setSize] = useState()
 
     const [isLessThan320] = useMediaQuery('(max-width: 320px)')
 
-    const { onOpen, isOpen, onClose } = useDisclosure
+    const { onOpen, isOpen, onClose } = useDisclosure()
 
     const btnRef = useRef()
-
-
+    
+    const handleClick = (newSize) => {
+      setSize(newSize)
+      onOpen()
+    }
+    
     return (
         <nav className={Styles.navWrapper}>
       <ul>
@@ -35,26 +45,26 @@ const Nav = () => {
           </NavLink>
         </li>
         {isLessThan320 ? (
-          <IconContext.Provider value={{color: "orange", ref:{btnRef}, onClick:{onOpen},className: `${Styles.hamburger}`}}>
-            <FaBars />
-          </IconContext.Provider>
+          <button ref={btnRef} onClick={() => handleClick('xs')} >
+            <FontAwesomeIcon icon={faBars} color="orange" />
+          </button>
           ) : (
            <li className={Styles.navItems}>
-           <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
+           <ul className={Styles.navList}>
+            <li >
+              <NavLink to="/" >Home</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about" >About</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/services" >Services</NavLink>
             </li>
             <li>
-              <NavLink to="/projects">Projects</NavLink>
+              <NavLink to="/projects" >Projects</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact us</NavLink>
+              <NavLink to="/contact" >Contact us</NavLink>
             </li>
             </ul>
         </li>
@@ -66,26 +76,28 @@ const Nav = () => {
         placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
+        colorScheme='orange'
+        size={size}
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerBody>
-            <ul>
+            <ul className={Styles.navList}>
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" onClick={onClose}>Home</NavLink>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/about" onClick={onClose}>About</NavLink>
               </li>
               <li>
-                <NavLink to="/services">Services</NavLink>
+                <NavLink to="/services" onClick={onClose}>Services</NavLink>
               </li>
               <li>
-                <NavLink to="/projects">Projects</NavLink>
+                <NavLink to="/projects" onClick={onClose}>Projects</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Contact us</NavLink>
+                <NavLink to="/contact" onClick={onClose}>Contact us</NavLink>
               </li>
             </ul>
           </DrawerBody>

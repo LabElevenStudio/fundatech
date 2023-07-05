@@ -55,22 +55,13 @@ const Product = () => {
               </Helmet>
               <Header title={name} img={bannerImage.url} />
               <header className={Styles.productHeader}>
-                <div
-                  className={Styles.productImage}
-                  role="image"
-                  style={{
-                    backgroundImage: `url(${bannerImage.url})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></div>
-                <section className={Styles.productDetails}>
-                  <h2>{name}</h2>
-                  <ReactMarkdown>{details}</ReactMarkdown>                 
-                </section>
+                  <section className={Styles.productDetails}>
+                    <h2>{name}</h2>
+                    <ReactMarkdown>{details}</ReactMarkdown>                 
+                  </section>
               </header>
-              <main className={Styles.productDescription}>
+              <main className={Styles.productDetails}>
+                <h2>Product Data</h2>
                 {productData ? 
                   <section dangerouslySetInnerHTML={markup}></section>
                   : null}

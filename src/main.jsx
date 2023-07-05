@@ -24,7 +24,9 @@ const {
       DrawerContent,
       DrawerCloseButton,
       Spinner,
-      Text
+      Text,
+      Grid,
+      GridItem
     } = chakraTheme.components
 
 
@@ -38,7 +40,9 @@ const theme = extendBaseTheme({
     DrawerContent,
     DrawerCloseButton,
     Spinner,
-    Text
+    Text,
+    Grid,
+    GridItem
   }
 })
 
