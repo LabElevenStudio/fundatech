@@ -1,15 +1,16 @@
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import Header from './components/IndexHeader'
 import LinkButton from './components/LinkButton';
 import Styles from './styles/home.module.scss'
-import {Link} from 'react-router-dom'
-import {useQuery, gql} from '@apollo/client'
+import { Link } from 'react-router-dom'
+import { useQuery, gql } from '@apollo/client'
 import Loader from './components/Loader'
 import Carousel from './components/Carousel'
 
 
 
-const CATEGORY_QUERY = gql`
+
+const CATEGORY_QUERY = gql `
   query Category {
     categories {
       id
@@ -23,13 +24,16 @@ const CATEGORY_QUERY = gql`
 
 const Home = () => {
 
-  const { data, loading, error } = useQuery(CATEGORY_QUERY)
+   
 
 
-  if(loading) return <Loader sz="md"/>
-  if (error) return <p>There was an error:{error}</p>
-  
-    return(
+    const { data, loading, error } = useQuery(CATEGORY_QUERY)
+
+
+    if (loading) return <Loader sz="md"/>
+    if (error) return <p>There was an error:{error}</p>
+
+    return (
         <main>
         <Helmet>
              <title>Fundamental Technology | Home</title>
