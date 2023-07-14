@@ -5,6 +5,7 @@ import Styles from './styles/home.module.scss'
 import {Link} from 'react-router-dom'
 import {useQuery, gql} from '@apollo/client'
 import Loader from './components/Loader'
+import Carousel from './components/Carousel'
 
 
 
@@ -106,7 +107,11 @@ const Home = () => {
              />
            </div>
          </section>
-         <section className={Styles.testimonials}></section>
+         <section className={Styles.testimonials}>
+          {/* <Carousel>
+             
+           </Carousel>*/}
+         </section>
        </main>
      </main>
     )

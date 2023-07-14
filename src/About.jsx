@@ -1,10 +1,10 @@
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import Header from './components/Header'
 import ReturnNav from './components/ReturnNav'
 import Styles from './styles/about.module.scss'
 
 const About = () => {
-    return(
+    return (
         <main>
             <Helmet>
                 <title>Fundamental Technology | About</title>
@@ -35,7 +35,15 @@ const About = () => {
             <section className={Styles.founder}>
                 <article>
                     <h2>Meet the founder</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ut error corporis nesciunt vitae maxime quae hic rem quos voluptatibus ullam mollitia amet recusandae, dolores magni. Suscipit ex provident voluptatum?</p>
+                    <p>
+                        <strong>Tijanee Abdul-Gafaar Adeneye</strong>, a Chartered Chemist, the founder of Fundamental Technology Limited and an independent consultant and Controller/CEO of Funda Chemicals Ventures. He was Technical Manager at Chemstar Paints Industry (Nigeria) Limited from November 2010 to December 2014, where he was responsible for researching into new products using the latest technologies, ensuring analytical evaluation of testing materials and products in the laboratory and that the company kept abreast of technologies in the development of new paint products. Previously, Mr. Tijanee worked at DN Meyer Plc from 1997 to 2010 at various capacities: Acting Technical (R & D) Manager (2010), Research & Development Chemist (2009), Quality Control Chemist (2007) and Laboratory Technician (1997). He also worked at IPWA Plc as Senior Laboratory Technician from 1993 to 1997.
+                    </p> <br></br>
+                    <p>
+                        <strong>Tijanee A.G.A. </strong>, Fellow of institute of Chartered Chemists of Nigeria, and dedicated member of both professional and religious societies, is a Fellow of Chemical Society of Nigeria.
+                    </p> <br></br>
+                    <p>
+                        <strong>Tijanee A.G.A.</strong> has Master degree in Business Administration (MBA, Marketing) in 2010 fro Ladoke Akintola University and has attended many conferences and seminars both locally and abroad, many of which are in the field of paint materials and product technology.
+                    </p> <br></br>
                 </article>
                 <img src="/images/founder.png" alt="fundamental technology founder"  />
             </section>
@@ -46,5 +54,3 @@ const About = () => {
 }
 
 export default About
-
-
