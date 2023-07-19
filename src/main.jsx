@@ -26,7 +26,10 @@ const {
       Spinner,
       Text,
       Grid,
-      GridItem
+      GridItem,
+      Skeleton,
+      SkeletonCircle,
+      SkeletonText
     } = chakraTheme.components
 
 
@@ -42,7 +45,10 @@ const theme = extendBaseTheme({
     Spinner,
     Text,
     Grid,
-    GridItem
+    GridItem,
+    Skeleton,
+    SkeletonCircle,
+    SkeletonText
   }
 })
 

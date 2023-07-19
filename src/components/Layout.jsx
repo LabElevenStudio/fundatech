@@ -26,7 +26,6 @@ const Layout = ({children}) => {
 
         if (document.readyState === 'complete') {
             onPageLoad()
-            console.log('ready1')
         } else {
             window.addEventListener('load', onPageLoad)
 

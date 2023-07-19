@@ -5,6 +5,7 @@ import ReturnNav from './components/ReturnNav'
 import Header from './components/Header'
 import Loader from './components/Loader'
 import Styles from './styles/category.module.scss'
+import ReactMarkdown from 'react-markdown'
 
 
 
@@ -20,8 +21,6 @@ const CATEGORY_QUERY = gql`
         id
         name
         slug
-        description
-        price
       }
     }
   }
@@ -58,12 +57,10 @@ const Category = () => {
                 <Header title={name} img={banner.url} />
                 <section className={Styles.catProducts}>
                   {
-                    products.map(({ id, name, slug, description, price }) => {
+                    products.map(({ id, name, slug}) => {
                       return (
                         <Link to={`/product/${slug}`} key={`prod-${id}`}>
                           <h4>{name}</h4>
-                          <p id={Styles.desc}>{description}</p>
-                          <p id={Styles.price}> <span style={{color: "forestgreen"}}>NGN</span> {price}</p>
                         </Link>
                       )
                     })
