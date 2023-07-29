@@ -60,6 +60,7 @@
             max-inline-size: 450px;
             color: vars.$textcolor;
             font-family: vars.$fontslab;
+            text-align: center;
         }
     }
 }
@@ -100,7 +101,7 @@
             @media #{vars.$media-mobile-s}{
                 width: 200px;
                 margin-left: 0px;
-                margin-bottom: 20px;
+                margin-bottom: 50px;
             }
         }
     }
@@ -141,4 +142,5 @@
     img{
         width: 300px;
     }
+    
 }

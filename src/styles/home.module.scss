@@ -72,9 +72,14 @@
     row-gap: 20px;
     column-gap: 10px;
     
+    figure{
+        
+    }
+    
     figure img{
         width: 200px;
         border-radius: 10px;
+        margin: 0 auto;
         @media #{vars.$media-mobile-s}{
             width: 100px;
         }
@@ -85,6 +90,7 @@
         text-transform: capitalize;
         font-weight: 600;
         font-family: vars.$fontslab;
+        text-align: center;
         @media #{vars.$media-mobile-s}{
             font-size: 1rem;
             font-weight: 400

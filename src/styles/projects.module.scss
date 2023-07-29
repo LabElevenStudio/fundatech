@@ -16,9 +16,18 @@
         &:first-child{
             margin-left: 50%;
             margin-bottom: 50px;
+            @media #{vars.$media-mobile-s}{
+                margin-left: 0;    
+            }
         }
         &:last-child{
             margin-left: -50%;
+            @media #{vars.$media-mobile-s}{
+                margin-left: 0;    
+            }
+        }
+        @media #{vars.$media-mobile-s}{
+            width: 300px;            
         }
     }
 }

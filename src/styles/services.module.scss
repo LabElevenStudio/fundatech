@@ -13,7 +13,7 @@
     position: relative;
     z-index: 2;
     @media #{vars.$media-mobile-s}{
-        margin-bottom: 300px;
+        height: 200vh;
     }
     & > article{
         width: 100%;
@@ -26,14 +26,19 @@
             color: #fff;
             z-index: 2;
             text-align: center;
+            @media #{vars.$media-mobile-s}{
+                margin-bottom: 10px;   
+            }
         }
         p{
             position: relative;
             color: #fff;
             z-index: 2;
-            font-family: vars.$fontslab;
             text-align: center;
             font-family: vars.$fontslab;
+            @media #{vars.$media-mobile-s}{
+                font-family: .3em;
+            }
         }
     }
 }
@@ -49,12 +54,12 @@
     left: 0;
     z-index: 1;
     @media #{vars.$media-mobile-s}{
-        justify-content: space-around;
+        visibility: hidden;
     }
     img{
         width: 200px;
         @media #{vars.$media-mobile-s}{
-            width: 80px;
+            visibility: hidden;
         }
     }
     img:nth-child(2){
@@ -121,6 +126,10 @@
         text-align: center;
         max-inline-size: 850px;
         word-wrap: break-word;
+        @media #{vars.$media-mobile-s}{
+            font-size: .7em;
+            line-height: calc(vars.$lh-small - 2px);    
+        }
     }
 }
 
@@ -133,6 +142,7 @@
     margin-top: 50px;
     @media #{vars.$media-mobile-s}{
         margin-top: 30px;
+        justify-content: space-evenly;
     }
     figure{
         display: flex;
@@ -229,10 +239,16 @@
         font-family: vars.$fontslab;
         font-size: 1.3rem;
         color: vars.$textcolor;
+        @media #{vars.$media-mobile-s}{
+            font-size: 1.2em;        
+        }
     }
     a{
         color: vars.$textcolor;
         transition: color .3s ease-out;
+        @media #{vars.$media-mobile-s}{
+            font-size: .95em;        
+        }
         &:hover{
             color: #000;
         }
