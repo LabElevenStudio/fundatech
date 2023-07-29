@@ -62,6 +62,16 @@ h2{
   }
 }
 
+h4{
+  font-size: 1.6rem;
+  font-family: vars.$fontslab;
+  text-transform: capitalize;
+  color: vars.$textcolor;
+  @media #{vars.$media-mobile-s}{
+    font-size: 1.2rem
+  }
+}
+
 button{
   border: none;
   background: none;

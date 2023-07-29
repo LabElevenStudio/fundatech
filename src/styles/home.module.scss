@@ -170,3 +170,23 @@
 .greenpaint{
     left: -100px;
 }
+
+
+.testimonials{
+    width: 100%;
+    height: 70vh;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lighten(vars.$base, 20%);
+     
+     h2{
+        color: #fff;
+     }
+    @media #{vars.$media-mobile-s}{
+        height: 120vh;
+    }
+}
+

@@ -39,6 +39,10 @@
             text-decoration: none;
             font-family: vars.$fontsans;
             font-size: .86rem;
+            transition: color .5s ease-in;
+            &:hover{
+                color: vars.$base;
+            }
         }
     }
 }

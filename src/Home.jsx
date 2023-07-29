@@ -1,11 +1,16 @@
 import { Helmet } from 'react-helmet'
 import Header from './components/IndexHeader'
 import LinkButton from './components/LinkButton';
-import Styles from './styles/home.module.scss'
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import Loader from './components/Loader'
-import Carousel from './components/Carousel'
+import {Skeleton, SkeletonText, Box} from '@chakra-ui/react'
+import images from './images'
+import Slider from './components/Slider'
+import SliderItem from './components/SliderItem'
+import Styles from './styles/home.module.scss'
+
+
 
 
 
@@ -24,7 +29,7 @@ const CATEGORY_QUERY = gql `
 
 const Home = () => {
 
-   
+
 
 
     const { data, loading, error } = useQuery(CATEGORY_QUERY)
@@ -45,10 +50,10 @@ const Home = () => {
          subtitle="at fundamental technology, customer satisfaction is our peace of mind"
        >
          <nav className={Styles.headerBtns}>
-           <LinkButton path="./products" btnType="primary">
+           <LinkButton path="/products" btnType="primary">
              View our products
            </LinkButton>
-           <LinkButton path="./contact" btnType="secondary">
+           <LinkButton path="/contact" btnType="secondary">
              Contact Us
            </LinkButton>
          </nav>
@@ -111,11 +116,10 @@ const Home = () => {
              />
            </div>
          </section>
-         <section className={Styles.testimonials}>
-          {/* <Carousel>
-             
-           </Carousel>*/}
-         </section>
+        <section className={Styles.testimonials}>
+        <h2>Testimonials</h2>
+        <Slider images={images} />
+        </section>
        </main>
      </main>
     )

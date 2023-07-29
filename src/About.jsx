@@ -27,9 +27,22 @@ const About = () => {
             <section className={Styles.offerings}>
                 <h2>What we offer</h2>
                 <div className={Styles.offeringsgrid}>
-                    <div className=""></div>
-                    <div className=""></div>
-                    <div className=""></div>
+                    <div className="">
+                        <img src="/images/icons/archery 1.svg" alt="accuracy" />
+                        <h4> accuracy </h4>
+                    </div>
+                    <div className="">
+                        <img src="/images/icons/celebration 1.svg" alt="neatness" />
+                        <h4>neatness</h4>
+                    </div>
+                    <div className="">
+                        <img src="/images/icons/agreement 1.svg" alt="dependability" />
+                        <h4> dependability </h4>
+                    </div>
+                    <div className="">
+                        <img src="images/icons/crossroad 2.svg" alt="flexibility" />
+                        <h4> flexibility </h4>
+                    </div>
                 </div>
             </section>
             <section className={Styles.founder}>

@@ -29,7 +29,8 @@ const {
       GridItem,
       Skeleton,
       SkeletonCircle,
-      SkeletonText
+      SkeletonText,
+      Box
     } = chakraTheme.components
 
 
@@ -68,7 +69,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
     <ChakraProvider theme={theme}> 
-    <ApolloProvider client={client} >
+    <ApolloProvider client={client}>
     <App />
     </ApolloProvider>
     </ChakraProvider>

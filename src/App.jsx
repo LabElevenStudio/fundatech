@@ -7,7 +7,6 @@ import Product from "./Product";
 import Category from "./Category";
 import Projects from "./Projects";
 import NotFound from "./404";
-import Success from './Success'
 import Home from "./Home";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
