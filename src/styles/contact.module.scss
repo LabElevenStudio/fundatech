@@ -27,7 +27,14 @@
     @media #{vars.$media-mobile-s}{
         height: 200vh;
     }
+    @media #{vars.$media-mobile-m}{
+        height: 200vh;
+    }
+    @media #{vars.$media-mobile-l}{
+        height: 200vh;
+    }
 }
+
 
 
 
@@ -63,12 +70,26 @@
         @media #{vars.$media-mobile-s}{
             font-size: 1.3rem;
         }
+        @media #{vars.$media-mobile-m}{
+            font-size: 1.3rem;
+        }
+        @media #{vars.$media-mobile-l}{
+            font-size: 1.3rem;
+        }
     }
     svg{
         width: 50px;
         height: 50px;
         fill: #fff;
         @media #{vars.$media-mobile-s}{
+            width: 30px;
+            height: 30px;
+        }
+        @media #{vars.$media-mobile-m}{
+            width: 30px;
+            height: 30px;
+        }
+        @media #{vars.$media-mobile-l}{
             width: 30px;
             height: 30px;
         }
@@ -84,6 +105,20 @@
     border-color: #fff;
     background-color: #fff;
     @media #{vars.$media-mobile-s}{
+        height: 3px;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        left: 250px;
+    }
+    @media #{vars.$media-mobile-m}{
+        height: 3px;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        left: 250px;
+    }
+    @media #{vars.$media-mobile-l}{
         height: 3px;
         width: 100%;
         left: 0;
@@ -111,6 +146,28 @@
             width: 25px;
             height: 25px;
         }
+        @media #{vars.$media-mobile-m}{
+            width: 25px;
+            height: 25px;
+        }
+        @media #{vars.$media-mobile-l}{
+            width: 25px;
+            height: 25px;
+        }
+    }
+    h2{
+        @media #{vars.$media-mobile-s}{
+            text-align: center;
+            font-size: 1.3em;
+        }
+        @media #{vars.$media-mobile-m}{
+            text-align: center;
+            font-size: 1.3em;
+        }
+        @media #{vars.$media-mobile-l}{
+            text-align: center;
+            font-size: 1.5em;
+        }
     }
     p{
         font-family: vars.$fontslab;
@@ -131,6 +188,12 @@
     @media #{vars.$media-mobile-s}{
         margin-top: 20px;
     }
+    @media #{vars.$media-mobile-m}{
+        margin-top: 20px;
+    }
+    @media #{vars.$media-mobile-l}{
+        margin-top: 20px;
+    }
 }
 
 .formControl{
@@ -140,6 +203,16 @@
     align-items: center;
     margin-bottom: 50px;
     @media #{vars.$media-mobile-s}{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @media #{vars.$media-mobile-m}{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @media #{vars.$media-mobile-l}{
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -156,7 +229,19 @@
             margin-bottom: 10px;
             font-size: 1rem;
             font-weight: 500;
-        }   
+        }
+        @media #{vars.$media-mobile-m}{
+            margin-right: 0px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        @media #{vars.$media-mobile-l}{
+            margin-right: 0px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
     }
     input{
         width: 250px;
@@ -179,16 +264,34 @@
         @media #{vars.$media-mobile-s}{
             width: 200px;
         }
+        @media #{vars.$media-mobile-m}{
+            width: 200px;
+        }
+        @media #{vars.$media-mobile-l}{
+            width: 200px;
+        }
     }
     &:first-child input{
         margin-left: 30px;
         @media #{vars.$media-mobile-s}{
             margin-left: 0px;
         }
+        @media #{vars.$media-mobile-m}{
+            margin-left: 0px;
+        }
+        @media #{vars.$media-mobile-l}{
+            margin-left: 0px;
+        }
     }
     &:nth-child(4) label{
         margin-left: -100px;
         @media #{vars.$media-mobile-s}{
+            margin-left: 0px;
+        }
+        @media #{vars.$media-mobile-m}{
+            margin-left: 0px;
+        }
+        @media #{vars.$media-mobile-l}{
             margin-left: 0px;
         }
     }
@@ -206,6 +309,12 @@
     margin-left: 80px;
     transition: color .2s ease-out, background .2s ease-out;
     @media #{vars.$media-mobile-s}{
+        margin-left: 0px;
+    }
+    @media #{vars.$media-mobile-m}{
+        margin-left: 0px;
+    }
+    @media #{vars.$media-mobile-l}{
         margin-left: 0px;
     }
     &:hover{

@@ -34,8 +34,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    
         a{
-            color: #000;
+            color: #fff;
             text-decoration: none;
             font-family: vars.$fontsans;
             font-size: .86rem;
@@ -49,6 +50,18 @@
 
 ul.navList{
     @media #{vars.$media-mobile-s}{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    @media #{vars.$media-mobile-m}{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    @media #{vars.$media-mobile-l}{
         width: 100%;
         height: 100%;
         display: grid;

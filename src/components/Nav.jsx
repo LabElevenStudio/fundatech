@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import Styles from "../styles/nav.module.scss";
 import { useMediaQuery } from '@chakra-ui/react';
 import {useRef, useState} from "react"
-import { FaBars } from 'react-icons/fa';
-import { IconContext } from 'react-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 import {
@@ -12,9 +10,7 @@ import {
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton,
-    Grid,
-    GridItem
+    DrawerCloseButton
 } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 
@@ -26,6 +22,10 @@ const Nav = () => {
     const [size, setSize] = useState()
 
     const [isLessThan320] = useMediaQuery('(max-width: 320px)')
+    
+    const [isLessThan375] = useMediaQuery('(max-width: 375px)')
+    
+    const [isLessThan425] = useMediaQuery('(max-width: 425px)')
 
     const { onOpen, isOpen, onClose } = useDisclosure()
 
@@ -44,8 +44,10 @@ const Nav = () => {
             <img src="/images/logo-colored.svg" alt="funda technology logo" />
           </NavLink>
         </li>
-        {isLessThan320 ? (
-          <button ref={btnRef} onClick={() => handleClick('xs')} >
+        {isLessThan320 ||
+          isLessThan375 ||
+          isLessThan425? (
+          <button ref={btnRef} onClick={() => handleClick('full')} >
             <FontAwesomeIcon icon={faBars} color="orange" />
           </button>
           ) : (
@@ -68,7 +70,7 @@ const Nav = () => {
             </li>
             </ul>
         </li>
-          )}
+          )}          
        
       </ul>
       <Drawer
@@ -76,13 +78,12 @@ const Nav = () => {
         placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
-        colorScheme='orange'
         size={size}
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerBody>
+          <DrawerBody bg='hsl(19, 90%, 55%)'>
             <ul className={Styles.navList}>
               <li>
                 <NavLink to="/" onClick={onClose}>Home</NavLink>

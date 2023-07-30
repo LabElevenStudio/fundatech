@@ -36,12 +36,21 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        padding: 0 10px;
         h2{
             color: vars.$textcolor;
             font-family: vars.$fontslab;
             font-size: 2.3rem;
             text-align: center;
             @media #{vars.$media-mobile-s}{
+                font-size: vars.$heading-mb;
+                margin-bottom: 30px;
+            }
+            @media #{vars.$media-mobile-m}{
+                font-size: vars.$heading-mb;
+                margin-bottom: 30px;
+            }
+            @media #{vars.$media-mobile-l}{
                 font-size: vars.$heading-mb;
                 margin-bottom: 30px;
             }
@@ -55,11 +64,26 @@
             @media #{vars.$media-mobile-s}{
                 font-size: .8rem;
             }
+            @media #{vars.$media-mobile-m}{
+                font-size: .7rem;
+            }
+            @media #{vars.$media-mobile-l}{
+                font-size: .7rem;
+            }
+            
+
         }
         @media #{vars.$media-mobile-s}{
             margin-bottom: 20px;
         }
+        @media #{vars.$media-mobile-m}{
+            margin-bottom: 20px;
+        }
+        @media #{vars.$media-mobile-l}{
+            margin-bottom: 20px;
+        }
     }
+
 }
 
 .specialization .grid{
@@ -83,6 +107,13 @@
         @media #{vars.$media-mobile-s}{
             width: 100px;
         }
+        @media #{vars.$media-mobile-m}{
+            width: 100px;
+        }
+        @media #{vars.$media-mobile-l}{
+            width: 100px;
+        }
+
     }
     figure figcaption{
         font-size: 1.5rem;
@@ -93,10 +124,35 @@
         text-align: center;
         @media #{vars.$media-mobile-s}{
             font-size: 1rem;
-            font-weight: 400
+            font-weight: 400;
         }
+        @media #{vars.$media-mobile-m}{
+                font-size: 1rem;
+                font-weight: 400;
+        }
+        @media #{vars.$media-mobile-l}{
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
     }
     @media #{vars.$media-mobile-s}{
+        position: relative;
+        width: 100%;
+        figure{
+            display: grid;
+            place-items: center;
+        }
+    }
+    @media #{vars.$media-mobile-m}{
+        position: relative;
+        width: 100%;
+        figure{
+            display: grid;
+            place-items: center;
+        }
+    }
+    @media #{vars.$media-mobile-l}{
         position: relative;
         width: 100%;
         figure{
@@ -140,6 +196,38 @@
             }
         }
     }
+    @media #{vars.$media-mobile-m}{
+        flex-direction: column;
+        margin-top: 20px;
+        article{
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            p{
+                margin-bottom: 20px;
+                margin-top: 10px;
+                text-align: center;
+                font-size: .65rem;
+                line-height: math.div(vars.$lh-small, 2);
+            }
+        }
+    }
+    @media #{vars.$media-mobile-l}{
+        flex-direction: column;
+        margin-top: 20px;
+        article{
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 20px;
+            p{
+                margin-bottom: 20px;
+                margin-top: 10px;
+                text-align: center;
+                font-size: .65rem;
+                line-height: math.div(vars.$lh-small, 2);
+            }
+        }
+    }
 }
 
 
@@ -158,8 +246,20 @@
             @media #{vars.$media-mobile-s}{
                 width: 200px;
             }
+            @media #{vars.$media-mobile-m}{
+                width: 200px;
+            }
+            @media #{vars.$media-mobile-l}{
+                width: 200px;
+            }
         }
         @media #{vars.$media-mobile-s}{
+            width: 120px;
+        }
+        @media #{vars.$media-mobile-m}{
+            width: 120px;
+        }
+        @media #{vars.$media-mobile-l}{
             width: 120px;
         }
     }
@@ -192,6 +292,12 @@
         color: #fff;
      }
     @media #{vars.$media-mobile-s}{
+        height: 120vh;
+    }
+    @media #{vars.$media-mobile-m}{
+        height: 120vh;
+    }
+    @media #{vars.$media-mobile-l}{
         height: 120vh;
     }
 }

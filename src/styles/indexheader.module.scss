@@ -16,8 +16,29 @@
             font-size: .7rem;
             text-align: center;
         }
+        @media #{vars.$media-mobile-m}{
+            font-size: .65rem;
+            text-align: center;
+            margin-top: -10px;
+        }
+        @media #{vars.$media-mobile-m}{
+            font-size: .65rem;
+            text-align: center;
+            margin-top: -10px;
+        }
+        @media #{vars.$media-mobile-l}{
+            font-size: .65rem;
+            text-align: center;
+            margin-top: -10px;
+        }
     }
     @media #{vars.$media-mobile-s}{
+        height: 60vh;
+    }
+    @media #{vars.$media-mobile-m}{
+        height: 60vh;
+    }
+    @media #{vars.$media-mobile-l}{
         height: 60vh;
     }
 }

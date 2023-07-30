@@ -15,6 +15,12 @@
     @media #{vars.$media-mobile-s}{
         height: 200vh;
     }
+    @media #{vars.$media-mobile-m}{
+        height: 200vh;
+    }
+    @media #{vars.$media-mobile-l}{
+        height: 220vh;
+    }
     & > article{
         width: 100%;
         height: 80%;
@@ -29,6 +35,12 @@
             @media #{vars.$media-mobile-s}{
                 margin-bottom: 10px;   
             }
+            @media #{vars.$media-mobile-m}{
+                margin-bottom: 12px;   
+            }
+            @media #{vars.$media-mobile-l}{
+                margin-bottom: 16px;   
+            }
         }
         p{
             position: relative;
@@ -39,6 +51,14 @@
             @media #{vars.$media-mobile-s}{
                 font-family: .3em;
             }
+            @media #{vars.$media-mobile-m}{
+                font-family: .36em;
+            }
+            @media #{vars.$media-mobile-l}{
+                font-family: .4em;
+            }
+
+
         }
     }
 }
@@ -56,9 +76,21 @@
     @media #{vars.$media-mobile-s}{
         visibility: hidden;
     }
+    @media #{vars.$media-mobile-m}{
+        visibility: hidden;
+    }
+    @media #{vars.$media-mobile-l}{
+        visibility: hidden;
+    }
     img{
         width: 200px;
         @media #{vars.$media-mobile-s}{
+            visibility: hidden;
+        }
+        @media #{vars.$media-mobile-m}{
+            visibility: hidden;
+        }
+        @media #{vars.$media-mobile-l}{
             visibility: hidden;
         }
     }
@@ -80,6 +112,14 @@
         flex-direction: column;
         top: 60px;
     }
+    @media #{vars.$media-mobile-m}{
+        flex-direction: column;
+        top: 65px;
+    }
+    @media #{vars.$media-mobile-l}{
+        flex-direction: column;
+        top: 70px;
+    }
     div{
         width: 100px;
         height: 100px;
@@ -91,6 +131,16 @@
         @media #{vars.$media-mobile-s}{
             width: 100px;
             height: 100px;
+            margin-bottom: 20px;
+        }
+        @media #{vars.$media-mobile-m}{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        @media #{vars.$media-mobile-l}{
+            width: 120px;
+            height: 120px;
             margin-bottom: 20px;
         }
         
@@ -130,6 +180,14 @@
             font-size: .7em;
             line-height: calc(vars.$lh-small - 2px);    
         }
+        @media #{vars.$media-mobile-m}{
+            font-size: .75em;
+            line-height: calc(vars.$lh-small - 2px);    
+        }
+        @media #{vars.$media-mobile-l}{
+            font-size: .82em;
+            line-height: calc(vars.$lh-small - 2px);    
+        }
     }
 }
 
@@ -144,6 +202,14 @@
         margin-top: 30px;
         justify-content: space-evenly;
     }
+    @media #{vars.$media-mobile-m}{
+        margin-top: 30px;
+        justify-content: space-evenly;
+    }
+    @media #{vars.$media-mobile-l}{
+        margin-top: 30px;
+        justify-content: space-evenly;
+    }
     figure{
         display: flex;
         width: 100%;
@@ -155,11 +221,26 @@
             flex-direction: column;
             justify-content: center;
         }
+        @media #{vars.$media-mobile-m}{
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media #{vars.$media-mobile-l}{
+            flex-direction: column;
+            justify-content: center;
+        }
+
 
     }
     .flowRight{
         flex-direction: row-reverse;
         @media #{vars.$media-mobile-s}{
+            flex-direction: column;
+        }
+        @media #{vars.$media-mobile-m}{
+            flex-direction: column;
+        }
+        @media #{vars.$media-mobile-l}{
             flex-direction: column;
         }
     }
@@ -169,6 +250,14 @@
     width: 300px;
     height: 300px;
     @media #{vars.$media-mobile-s}{
+        width: 150px;
+        height: 150px;
+    }
+    @media #{vars.$media-mobile-m}{
+        width: 150px;
+        height: 150px;
+    }
+    @media #{vars.$media-mobile-m}{
         width: 150px;
         height: 150px;
     }
@@ -217,11 +306,24 @@
     @media #{vars.$media-mobile-s}{
         border-radius: 20px 20px 20px 0px;
     }
+    @media #{vars.$media-mobile-m}{
+        border-radius: 20px 20px 20px 0px;
+    }
+    @media #{vars.$media-mobile-l}{
+        border-radius: 25px 25px 25px 0px;
+    }
+
 }
 .specializationGrid .flowRight div{
     border-radius: 50px 50px 0px 50px;
     @media #{vars.$media-mobile-s}{
         border-radius: 20px 20px 20px 0px;
+    }
+    @media #{vars.$media-mobile-m}{
+        border-radius: 20px 20px 20px 0px;
+    }
+    @media #{vars.$media-mobile-l}{
+        border-radius: 25px 25px 25px 0px;
     }
 }
 
@@ -235,11 +337,23 @@
     @media #{vars.$media-mobile-s}{
         justify-content: flex-start;
     }
+    @media #{vars.$media-mobile-m}{
+        justify-content: flex-start;
+    }
+    @media #{vars.$media-mobile-l}{
+        justify-content: flex-start;
+    }
     h3{
         font-family: vars.$fontslab;
         font-size: 1.3rem;
         color: vars.$textcolor;
         @media #{vars.$media-mobile-s}{
+            font-size: 1.2em;        
+        }
+        @media #{vars.$media-mobile-m}{
+            font-size: 1.2em;        
+        }
+        @media #{vars.$media-mobile-l}{
             font-size: 1.2em;        
         }
     }
@@ -249,6 +363,15 @@
         @media #{vars.$media-mobile-s}{
             font-size: .95em;        
         }
+        @media #{vars.$media-mobile-m}{
+            font-size: .95em;        
+        }
+        @media #{vars.$media-mobile-l}{
+            font-size: .1em;        
+        }
+
+
+
         &:hover{
             color: #000;
         }

@@ -20,7 +20,7 @@ const ImgSlider = ({ images }) => {
 				<section className={Styles.slider} style={{transform: `translateX(-${activeIndex * 100}%)`}}>
 				{images.map((image) => {
 					return(
-						<SliderItem image={image} />
+						<SliderItem key={`image-${image.id}`}image={image} />
 						)
 					})
 				}

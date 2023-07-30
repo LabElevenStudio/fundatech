@@ -9,6 +9,12 @@
     @media #{vars.$media-mobile-s}{
         height: 150vh;
     }
+    @media #{vars.$media-mobile-m}{
+        height: 150vh;
+    }
+    @media #{vars.$media-mobile-l}{
+        height: 180vh;
+    }
 }
 
 .footerContent{
@@ -21,12 +27,24 @@
     @media #{vars.$media-mobile-l}{
         flex-direction: column;
     }
+    @media #{vars.$media-mobile-m}{
+        flex-direction: column;
+    }
+    @media #{vars.$media-mobile-s}{
+        flex-direction: column;
+    }
 }
 
 .footerInner{
     img{
         width: 250px;
         @media #{vars.$media-mobile-s}{
+            width: 150px;
+        }
+        @media #{vars.$media-mobile-m}{
+            width: 150px;
+        }
+        @media #{vars.$media-mobile-l}{
             width: 150px;
         }
     }
@@ -52,6 +70,14 @@
         position: relative;
         top: 30px;
     }
+    @media #{vars.$media-mobile-m}{
+        position: relative;
+        top: 30px;
+    }
+    @media #{vars.$media-mobile-l}{
+        position: relative;
+        top: 30px;
+    }
 
 }
 
@@ -74,6 +100,18 @@
         font-family: vars.$fontsans;
         margin-bottom: 15px;
         @media #{vars.$media-mobile-s}{
+            inline-size: 300px;
+            word-wrap: break-word;
+            text-align: center;
+            font-size: 14px;
+        }
+        @media #{vars.$media-mobile-m}{
+            inline-size: 300px;
+            word-wrap: break-word;
+            text-align: center;
+            font-size: 14px;
+        }
+        @media #{vars.$media-mobile-l}{
             inline-size: 300px;
             word-wrap: break-word;
             text-align: center;
@@ -111,6 +149,14 @@
             width: 250px;
             height: 30px;
         }
+        @media #{vars.$media-mobile-m}{
+            width: 250px;
+            height: 30px;
+        }
+        @media #{vars.$media-mobile-l}{
+            width: 250px;
+            height: 30px;
+        }
     }
     .formInput button{
         height: 45px;
@@ -133,8 +179,38 @@
             width: 250px;
             height: 30px;
         }
+        @media #{vars.$media-mobile-m}{
+            left: 0px;
+            top: 10px;
+            width: 250px;
+            height: 30px;
+        }
+        @media #{vars.$media-mobile-l}{
+            left: 0px;
+            top: 10px;
+            width: 250px;
+            height: 30px;
+        }
     }
     @media #{vars.$media-mobile-s}{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        left: -20%;
+        top: -10%;
+    }
+    @media #{vars.$media-mobile-m}{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        left: -20%;
+        top: -10%;
+    }
+    @media #{vars.$media-mobile-l}{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -151,6 +227,18 @@
     justify-content: space-between;
     align-items: center;
     @media #{vars.$media-mobile-s}{
+        flex-direction: column;
+        margin-top: 20px;
+        width: 300px;
+        text-align: center;
+    }
+    @media #{vars.$media-mobile-m}{
+        flex-direction: column;
+        margin-top: 20px;
+        width: 300px;
+        text-align: center;
+    }
+    @media #{vars.$media-mobile-l}{
         flex-direction: column;
         margin-top: 20px;
         width: 300px;
@@ -185,6 +273,24 @@
                 text-align: center;
             }
         }
+        @media #{vars.$media-mobile-m}{
+            margin-bottom: 10px;
+            dt{
+                text-align: center;
+            }
+            dd{
+                text-align: center;
+            }
+        }
+        @media #{vars.$media-mobile-l}{
+            margin-bottom: 10px;
+            dt{
+                text-align: center;
+            }
+            dd{
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -198,11 +304,27 @@
         margin-top: 20px;
         flex-direction: column-reverse;
     }
+    @media #{vars.$media-mobile-m}{
+        margin-top: 20px;
+        flex-direction: column-reverse;
+    }
+    @media #{vars.$media-mobile-s}{
+        margin-top: 20px;
+        flex-direction: column-reverse;
+    }
     p{
         color: #fff;
         font-family: vars.$fontsans;
         font-size: .83rem;
         @media #{vars.$media-mobile-s}{
+            font-size: .6rem;
+            margin-bottom: 5px;
+        }
+        @media #{vars.$media-mobile-m}{
+            font-size: .6rem;
+            margin-bottom: 5px;
+        }
+        @media #{vars.$media-mobile-l}{
             font-size: .6rem;
             margin-bottom: 5px;
         }

@@ -1,4 +1,6 @@
 
+@use 'vars';
+
 .slideItem{
 	flex: 0 0 100%;
 	width: 600px;
@@ -14,6 +16,16 @@
 .slideItem img{
 	width: 250px;
 	height: 250px;
+	@media #{vars.$media-mobile-s}{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    @media #{vars.$media-mobile-m}{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -22,5 +34,11 @@
 	inline-size: 250px;
 	word-wrap: break-word;
 	white-space: pre-wrap;
+	@media #{vars.$media-mobile-s}{
+        text-align: center;
+    }
+    @media #{vars.$media-mobile-m}{
+        text-align: center;
+    }
 }
 
