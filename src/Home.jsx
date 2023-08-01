@@ -1,16 +1,14 @@
+import {useState, useEffect} from 'react'
 import { Helmet } from 'react-helmet'
 import Header from './components/IndexHeader'
 import LinkButton from './components/LinkButton';
 import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import Loader from './components/Loader'
-import {Skeleton, SkeletonText, Box} from '@chakra-ui/react'
 import images from './images'
 import Slider from './components/Slider'
 import SliderItem from './components/SliderItem'
 import Styles from './styles/home.module.scss'
-
-
 
 
 
@@ -29,12 +27,13 @@ const CATEGORY_QUERY = gql `
 
 const Home = () => {
 
-
+    
 
 
     const { data, loading, error } = useQuery(CATEGORY_QUERY)
-
-
+    
+    
+    
     if (loading) return <Loader sz="md"/>
     if (error) return <p>There was an error:{error}</p>
 
@@ -70,9 +69,10 @@ const Home = () => {
            </article>
             <section className={Styles.grid}>
               {
-                data.categories.map(({ id, name, slug, thumbnail }) => {
+                 data.categories.map(({ id, name, slug, thumbnail }) => {
                   return (
                     <Link to={`/category/${slug}`} key={id} >
+                    
                       <figure>
                         <img
                           src={thumbnail.url}
@@ -80,6 +80,7 @@ const Home = () => {
                         />
                         <figcaption>{name}</figcaption>
                       </figure>
+                      
                     </Link>
                   );
                 })

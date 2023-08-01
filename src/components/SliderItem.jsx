@@ -5,7 +5,7 @@ const SliderItem = ({image}) => {
 	return(
 				<section  className={Styles.slideItem}>
 					<img src={image.src} alt="" />
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis harum consequuntur, dolor ratione error, adipisci!</p>
+					<p>{image.text}</p>
 				</section>
 		)
 }
