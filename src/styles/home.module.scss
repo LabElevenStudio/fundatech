@@ -97,7 +97,11 @@
     column-gap: 10px;
     
     figure{
-        
+        transition: transform 0.6s ease-out;
+    }
+    
+    figure:hover{
+        transform: translateY(-5px);
     }
     
     figure img{

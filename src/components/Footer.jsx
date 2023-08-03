@@ -41,7 +41,7 @@ export default function Footer() {
               <dl>
                 <dt>Support</dt>
                 <dd>
-                  <Link to="/contacat">Contact Us</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </dd>
                 <dd>FAQ</dd>
                 <dd>Consultation</dd>
