@@ -34,6 +34,7 @@
 	inline-size: 250px;
 	word-wrap: break-word;
 	white-space: pre-wrap;
+	font-family: vars.$fontslab;
 	@media #{vars.$media-mobile-s}{
         text-align: center;
     }
