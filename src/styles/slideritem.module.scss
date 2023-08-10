@@ -16,6 +16,9 @@
 .slideItem img{
 	width: 250px;
 	height: 250px;
+	border-radius: 32px 31px 0px 31px;
+	-moz-border-radius: 32px 31px 0px 31px;
+	-webkit-border-radius: 32px 31px 0px 31px;
 	@media #{vars.$media-mobile-s}{
         width: 200px;
         height: 200px;
